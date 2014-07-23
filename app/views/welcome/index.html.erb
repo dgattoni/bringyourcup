@@ -1,0 +1,52 @@
+<h1>Welcome#index</h1>
+<p>Find me in app/views/welcome/index.html.erb</p>
+
+<h1>Taller de Rails</h1>
+
+<h2>Santiago. 2014</h2>
+
+<% 
+#comentario en ruby: signo gato
+#asignando variables en ruby
+a =2+2 %>
+
+<h3 style="color:#581304;">El numero es: <%= a %> </h3> 
+
+
+<div>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</p>
+	<a href="http:///www.en1mes.cl">IR AQUI</a>
+	<img src="http://valentinaantonia.files.wordpress.com/2012/03/20081205145932_muffins.jpg" width="200" height="200">
+</div>
+
+
+<!-- image_tag: genera la imagen con ruby en la ruta Local.-->
+
+<% a = "20081205145932_muffins.jpg" %>
+
+<!-- //variable en ruby-->
+<p>
+<%= image_tag(a) %>
+</p>
+
+
+<!-- muestro variable con tag image-->
+<p>
+<% image_tag("20081205145932_muffins.jpg") %>
+</p>
+
+<!-- // -->
+<p>
+<%= 2+2 %>
+
+</p>
+
+
+
+
