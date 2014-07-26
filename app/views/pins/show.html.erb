@@ -1,0 +1,18 @@
+<div class="container">
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @pin.title %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= image_tag(@pin.photo, class:"img-responsive") %>
+</p>
+
+<%= link_to '< Volver', pins_path %> |
+<%= link_to 'Editar', edit_pin_path(@pin) %> 
+
+</div>
