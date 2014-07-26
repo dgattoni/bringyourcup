@@ -1,5 +1,5 @@
 .jumbotron {
-	 background: url('<%= asset_path("imagen1.png") %>') repeat top left fixed;	 
+	background: url("/assets/dark_wood1.png") repeat top left fixed;
 	}
 
 

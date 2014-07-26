@@ -4532,7 +4532,8 @@ a.list-group-item.active > .badge,
   margin-left: 3px;
 }
 .jumbotron {
-  background: #666 url('<%= asset_path("imagen1.png") %>') repeat top left fixed;
+  /*background: #666 url(<%= asset_path("imagen1.png") %>) repeat top left fixed;*/
+  background: url("/assets/dark_wood1.png") repeat top left fixed;
   padding: 30px;
   margin-bottom: 30px;
   color: inherit;
