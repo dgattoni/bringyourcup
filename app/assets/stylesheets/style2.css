@@ -4532,10 +4532,11 @@ a.list-group-item.active > .badge,
   margin-left: 3px;
 }
 .jumbotron {
+  background: #666 url('<%= asset_path("imagen1.png") %>') repeat top left fixed;
   padding: 30px;
   margin-bottom: 30px;
   color: inherit;
-  background-color: #e6e6e6;
+  
 }
 .jumbotron h1,
 .jumbotron .h1 {
