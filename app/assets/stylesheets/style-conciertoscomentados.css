@@ -1,6 +1,6 @@
 .jumbotron {
 
-	 background:url("dark_wood.png") repeat top left fixed;
+	 background:url("../assets/dark_wood.png") repeat top left fixed;
 	}
 
 .jumbotron h2 { color: #999;}
