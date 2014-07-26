@@ -1,9 +1,7 @@
 .jumbotron {
-
-	 /*background:url("../assets/dark_wood.png") repeat top left fixed;*/
-	 background:url(<%= asset_path("dark_wood.png") %>) repeat top left fixed;
-	 
+	 background:url( <%= asset_path('dark_wood1.png') %> ) repeat top left fixed;	 
 	}
+
 
 .jumbotron h2 { color: #999;}
 
