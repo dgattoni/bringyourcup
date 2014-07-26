@@ -4535,7 +4535,7 @@ a.list-group-item.active > .badge,
   /*background: #666 url(<%= asset_path("imagen1.png") %>) repeat top left fixed;
   background: url('<%= asset_path("dark_wood1.png") %>');
   background-image: url(image_path('dark_wood1.png')); */
-  background:url(<%= asset_path('dark_wood1.png', image) %>) repeat-x;
+  
   padding: 30px;
   margin-bottom: 30px;
   color: inherit;
