@@ -1,3 +1,20 @@
+.test1{
+    background:url(<%= asset_path('dark_wood1.png', image) %>) repeat-x;
+    padding-top:0px;
+}
+
+.test2{
+
+    background:url(<%= asset_path('dark_wood1.png', image) %>) repeat-x;
+    padding-top:0px;
+}
+
+.test3 { 
+    background: url(<%= asset_data_uri 'dark_wood1.png' %>) repeat-x; 
+padding-top:0px;
+}
+ 
+
 .jumbotron {
 	/*background: url("/assets/dark_wood1.png") repeat top left fixed;*/
 	/*background: url(<%= asset_path("dark_wood1.png") %>);
