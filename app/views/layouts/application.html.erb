@@ -11,61 +11,33 @@
 
     <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-
-<!-- Optional theme -->
+ <!-- Optional theme -->
 <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 -->
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-
+ 
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+ <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+
+
 <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
 
 </head>
 <body>
 
-<nav class="navbar navbar-default" role="navigation" style="margin-bottom: 0px;">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="<%= root_path %>">Conciertos Comentados</a>
-    </div>
+<!-- barra de navegacion parcial que se carga en _navbar.html.erb -->
+<%= render 'layouts/navbar' %>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="<%= welcome_nosotros_path %>">Quienes Sómos</a></li>
-        <li><a href="#">Proyectos Artísticos</a></li>        
-        <li><a href="#">Músicos en las Calles</a></li>
-        <li><a href="#">Nuestras influencias musicales</a></li>
-        <li><a href="#">Oda a...</a></li>
-         
-      </ul>
-      <form class="navbar-form navbar-left pull-right" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control  input-sm" placeholder=" ">
-        </div>
-        <button type="submit" class="btn btn-default">Buscar</button>
-      </form>
-      
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-
-
+ 
 
 <%= yield %>
 
-</body>
+ </body>
 </html>

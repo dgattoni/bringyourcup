@@ -1,6 +1,9 @@
-<h1>Editing pin</h1>
+<div class="container">
+<h1>Editar Pin de Youtube</h1>
 
-<%= render 'form' %>
+<%= render 'form' %> 
 
-<%= link_to 'Show', @pin %> |
-<%= link_to 'Back', pins_path %>
+<p class="pull-left"><%= link_to 'Volver', pins_path, class:"btn btn-default" %></p>
+
+<p class="pull-left"><%= link_to 'Ver este Video', @pin, class:"btn btn-default" %>  </p>
+</div>

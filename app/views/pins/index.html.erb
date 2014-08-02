@@ -1,30 +1,79 @@
-<h1>Videos de Conciertos Comentados</h1>
+
 
 <div class="container">
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Photo</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
+
+<div class="row">
+<div class="col-lg-9">
+<h1>Lista de Videos Conciertos Comentados</h1>
+ 
+</div>
+<div class="col-lg-2">
+
+ <%= link_to 'Nuevo Pin de Youtube', new_pin_path, class:"btn btn-info  " %>
+
+</div>
+</div>
+  
+<div class="row">
     <% @pins.each do |pin| %>
-      <tr>
-        <td><%= pin.title %></td>
-        <td><%= image_tag(pin.photo, class:"img-responsive") %></td>
-        <td><%= link_to ' Ver ', pin %></td>
-        <td><%= link_to ' Editar ', edit_pin_path(pin) %></td>
-        <td><%= link_to ' Borrar ', pin, method: :delete, data: { confirm: 'Estas Seguro de borrar?' } %></td>
-      </tr>
+
+    <div class="col-sm-3 col-md-3 pull-left">
+    <div class="thumbnail">
+      <img src="https://i.ytimg.com/vi/<%= pin.photo %>/mqdefault.jpg" alt="Foto" class="img-responsive">
+      <div class="caption">
+        <h4 style="text-transform:uppercase">CC: <%= truncate(pin.title , :length => 20) %> </h4>
+        <p>
+       <%= truncate(pin.description , :length => 140) %>
+
+        </p>
+        <p>
+        <%= link_to 'Ver', pin, :class => 'btn btn-danger btn-sm' %>
+        <%= link_to 'Editar', edit_pin_path(pin), :class => 'btn btn-danger btn-sm' %>
+        <%= link_to 'Borrar', pin, method: :delete, data: { confirm: 'Estas Seguro de Borrar?' }, :class => 'btn btn-danger btn-sm' %>
+         
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+ 
     <% end %>
-  </tbody>
-</table>
+ 
+</div>
 
-<br>
 
-<%= link_to 'New Pin', new_pin_path %>
+
+
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1 class="panel-title"> Videos Destacados </h1>
+  </div>
+  <div class="panel-body">
+           <% @pinsDestacados.each do |pin| %>
+
+    <div class="col-sm-4 col-md-4 pull-left">
+    <div class="thumbnail">
+      <img src="https://i.ytimg.com/vi/<%= pin.photo %>/mqdefault.jpg" alt="Foto" class="img-responsive">
+      <div class="caption">
+        <h4><%= pin.title %> </h4>
+        <p>destacado: <%= pin.destacado %></p>
+        
+      </div>
+    </div>
+  </div>
+
+
+ 
+    <% end %>
+  </div>
+</div>
+ 
+
+
+
 
 </div>

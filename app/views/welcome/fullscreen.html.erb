@@ -1,0 +1,89 @@
+ 
+
+<div class="container">
+
+      <div class="row row-offcanvas row-offcanvas-right">
+
+        <div class="col-xs-12 col-sm-9">
+          <p class="pull-right visible-xs">
+            <button data-toggle="offcanvas" class="btn btn-primary btn-xs" type="button">Más videos  »</button>
+          </p>
+           
+          <div class="row">
+            <div class="col-sm-6 col-lg-9">
+              <h2>CC: beatbox chileno</h2>
+                <p>Publicado el 24/7/2014</p>                
+                <p>
+                <object width="640" height="480"class="videoytb"><param name="movie" value="//www.youtube.com/v/nZhZQx-5LrQ?version=3&amp;hl=es_ES&amp;rel=0"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="//www.youtube.com/v/nZhZQx-5LrQ?version=3&amp;hl=es_ES&amp;rel=0" type="application/x-shockwave-flash" width="640" height="480" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+                </p>
+
+                <p class="well well-sm">
+                Buenos ritmos de estos cabros haciendo beatbox afuera del metro linea 5, bellas artes, Barrio lastarria. Santiago de chile.
+                </p>
+                <p>Categoría: <span class="label label-danger">Música</span></p>
+                <p>Año: <span class="label label-info">Julio</span>
+                <span class="label label-info">2014</span></p>
+
+
+                
+
+  
+                
+                <p class="pull-right"><a role="button" href="#" class="btn btn-default">Volver »</a></p>
+            </div><!--/span-->
+            
+              
+            
+          </div><!--/row-->
+        </div><!--/span-->
+
+<!-- 
+        <div role="navigation" id="sidebar" class="col-xs-6 col-sm-3 sidebar-offcanvas">
+          <div class="list-group">
+            <a class="list-group-item active" href="#">CC: beatbox chileno</a>
+            <a class="list-group-item" href="#">CC: Violin and Didgeridoo</a>
+            <a class="list-group-item" href="#">CC: Romina, Acordeón</a>
+            <a class="list-group-item" href="#">CC: beatbox chileno</a>
+            <a class="list-group-item" href="#">CC: beatbox chileno</a>
+            <a class="list-group-item" href="#">CC: beatbox chileno</a>
+            <a class="list-group-item" href="#">CC: Romina, Acordeón</a>
+            <a class="list-group-item" href="#">CC: beatbox chileno</a>
+            <a class="list-group-item" href="#">CC: beatbox chileno</a>
+            <a class="list-group-item" href="#">CC: Violin and Didgeridoo</a>
+          </div>
+        </div> -->
+        
+        <!--/span-->
+
+
+        <div role="navigation" id="sidebar" class="col-xs-6 col-sm-3 sidebar-offcanvas">
+          <div class="list-group">
+
+           <% @pins.each do |pin| %>
+            <a class="list-group-item" href="<%= pin.id %>">
+ 
+            <%= pin.title %>
+
+             </a>  
+          <% end %>
+
+           </div>
+        </div><!--/span-->
+
+
+
+
+
+
+
+
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <p>&copy; Company 2014</p>
+      </footer>
+
+    </div>
+

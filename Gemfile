@@ -7,6 +7,9 @@ gem 'rails', '4.1.4'
 gem 'sqlite3', group: :development
 gem 'pg', group: :production
 gem 'rails_12factor', group: :production
+gem 'devise'
+
+gem 'activeadmin', github: 'gregbell/active_admin'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
