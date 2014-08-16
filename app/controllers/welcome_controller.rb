@@ -17,7 +17,7 @@ class WelcomeController < ApplicationController
     end
 
     def client.get_all_tweets(user)
-    options = {:count => 3, :include_rts => true}
+    options = {:count => 8, :include_rts => true}
     user_timeline(user, options)
     end
 
