@@ -141,10 +141,9 @@
            
 
             <ul>
-            <% @tweet_buscar.each do |f| %>
+            <% @tweet_followers.each do |f| %>
             <li>
-            <%= f.text%>
-            <span>  <%= time_ago_in_words(f.created_at) %> ago</span>
+            <%= f.text%>            
             </li>
             <% end %>
             </ul>

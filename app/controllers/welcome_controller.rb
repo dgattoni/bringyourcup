@@ -20,8 +20,14 @@ class WelcomeController < ApplicationController
     user_timeline(user, options)
     end
 
+    def client.get_followers(user)
+    options = {:count => 8}
+    followers(user, options)
+    end
 
-    @tweet_buscar =  client.search("#ruby -rt", :lang => "ja").first.text
+
+
+    @tweet_followers = client.get_followers("danigattoni_")
     @tweet_news = client.get_all_tweets("danigattoni_")
 
     # @tweet_update = client.update("I'm tweeting with @gem!")
