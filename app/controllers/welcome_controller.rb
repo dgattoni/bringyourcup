@@ -13,7 +13,6 @@ class WelcomeController < ApplicationController
     config.consumer_secret     = "pQQ7rCkMin7GvQdsaFvPtahthIjdiUwQpIkx5miZmh0wJU1Uzz"
     config.access_token        = "445571280-j2m2vwaOb4mDb1qBXUvmT6oqlh0Topiixh6vfX3u"
     config.access_token_secret = "9w5GsOzAitaDl13KGFFFvu7oLmT1xQpJpEAALFzDWdmbG" 
-
     end
 
     def client.get_all_tweets(user)
@@ -21,9 +20,13 @@ class WelcomeController < ApplicationController
     user_timeline(user, options)
     end
 
+
+    @tweet_buscar =  client.search("#ruby -rt", :lang => "ja").first.text
     @tweet_news = client.get_all_tweets("danigattoni_")
 
-     @tweet_update = client.update("I'm tweeting with @gem!")
+    # @tweet_update = client.update("I'm tweeting with @gem!")
+    
+
 
   end
 
