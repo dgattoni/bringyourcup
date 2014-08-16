@@ -1,42 +1,62 @@
- 
-
-<%= form_for(@pin) do |f| %>
+<%= simple_form_for(@pin, html: {class: "form-horizontal"}) do |f| %>
   <% if @pin.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@pin.errors.count, "error") %> prohibited this pin from being saved:</h2>
+      <h2><%= pluralize(@pin.errors.count, "error") %> prohibited this status from being saved:</h2>
 
       <ul>
-      <% @pin.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <% @pin.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
+  
 
-  <div class="field">
+    <div class="field">
    
        <label for="title" class="text-primary">Título del Video</label>
 
     <%= f.text_field :title,  class:'form-control', placeholder:'escribe un titulo' %>
   </div>
-  <div class="field" >
+ 
+
+<div class="field" >
       <label for="photo" class="text-primary">youtube ID</label>  
-    <%= f.text_field :photo,  class:'form-control', placeholder:'inserta una ruta ejemplo cFszzHSa_GE' %>
-  </div>
-  <div class="field">
-      <label for="description" class="text-primary">Descripcion</label> 
-    <%= f.text_area :description,  class:'form-control', placeholder:'escribe una descripcion' %>
+    <%= f.text_field :photo,  class:'form-control', placeholder:'inserta una 
+
+ruta ejemplo cFszzHSa_GE' %>
   </div>
 
-   <div class="field">
-      <label for="destacado" class="text-primary"> Quieres destacar el video en la Home?</label> 
-    <%= f.text_field :destacado,  class:'form-control', placeholder:'si|no' %>
+<div class="field">
+      <label for="description" class="text-primary">Descripcion</label> 
+    <%= f.text_area :description,  class:'form-control', placeholder:'escribe 
+
+una descripcion' %>
   </div>
-<br>
+
+  <!-- ************************************************************* -->
+ <div class="field">
+   
+       <label for="title" class="text-primary">Categoria</label>
+
+    <%   #f.input :user_id, collection: User.all, label_method: :email %>
+
+     
+     <%= f.input :user_id, :label => 'Usuarios',  :as => :select, :collection => User.all.map{|u| [u.email, u.id]} %>
+
+
+
+  </div>
+ 
+
   <div class="actions pull-right">
     <%= f.submit :enviar, class:'btn btn-danger' %>
   </div>
 
 
+  
 <% end %>
+
+ 
+
  

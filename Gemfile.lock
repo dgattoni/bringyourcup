@@ -15,6 +15,13 @@ GIT
       ransack (~> 1.0)
       sass-rails
 
+GIT
+  remote: git://github.com/stefanpenner/country_select.git
+  revision: 20b9ef1a539d369c20ac0a7730096047ba5e75c4
+  specs:
+    country_select (2.0.0.beta2)
+      countries (~> 0.9.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -44,6 +51,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    addressable (2.3.6)
     arbre (1.0.1)
       activesupport (>= 3.0.0)
     arel (5.0.1.20140414130214)
@@ -51,6 +59,7 @@ GEM
     bourbon (3.2.3)
       sass (~> 3.2)
       thor
+    buftok (0.2.0)
     builder (3.2.2)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -59,20 +68,45 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.1)
+    cookiejar (0.3.2)
+    countries (0.9.3)
+      currencies (~> 0.4.2)
+    currencies (0.4.2)
+    daemons (1.1.9)
     devise (3.2.4)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    em-http-request (1.1.2)
+      addressable (>= 2.3.4)
+      cookiejar
+      em-socksify (>= 0.3)
+      eventmachine (>= 1.0.3)
+      http_parser.rb (>= 0.6.0)
+    em-socksify (0.3.0)
+      eventmachine (>= 1.0.0.beta.4)
+    em-twitter (0.3.3)
+      buftok (~> 0.2)
+      eventmachine (~> 1.0)
+      http_parser.rb (~> 0.6)
+      simple_oauth (~> 0.2)
+    equalizer (0.0.9)
     erubis (2.7.0)
+    eventmachine (1.0.3-x86-mingw32)
     execjs (2.2.1)
+    faraday (0.9.0)
+      multipart-post (>= 1.2, < 3)
     formtastic (2.3.0.rc3)
       actionpack (>= 3.0)
     has_scope (0.6.0.rc)
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
     hike (1.2.3)
+    http (0.6.2)
+      http_parser.rb (~> 0.6.0)
+    http_parser.rb (0.6.0)
     i18n (0.6.11)
     inherited_resources (1.4.1)
       has_scope (~> 0.6.0.rc)
@@ -92,9 +126,13 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    memoizable (0.4.2)
+      thread_safe (~> 0.3, >= 0.3.1)
     mime-types (1.25.1)
     minitest (5.4.0)
     multi_json (1.10.1)
+    multipart-post (2.0.0)
+    naught (1.0.0)
     orm_adapter (0.5.0)
     pg (0.17.1-x86-mingw32)
     polyamorous (1.0.0)
@@ -143,6 +181,10 @@ GEM
     sdoc (0.4.0)
       json (~> 1.8)
       rdoc (~> 4.0, < 5.0)
+    simple_form (3.0.2)
+      actionpack (~> 4.0)
+      activemodel (~> 4.0)
+    simple_oauth (0.2.0)
     sprockets (2.11.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -161,6 +203,23 @@ GEM
       polyglot (>= 0.3.1)
     turbolinks (2.2.2)
       coffee-rails
+    tweetstream (2.6.1)
+      daemons (~> 1.1)
+      em-http-request (>= 1.1.1)
+      em-twitter (~> 0.3)
+      multi_json (~> 1.3)
+      twitter (~> 5.5)
+    twitter (5.11.0)
+      addressable (~> 2.3)
+      buftok (~> 0.2.0)
+      equalizer (~> 0.0.9)
+      faraday (~> 0.9.0)
+      http (~> 0.6.0)
+      http_parser.rb (~> 0.6.0)
+      json (~> 1.8)
+      memoizable (~> 0.4.0)
+      naught (~> 1.0)
+      simple_oauth (~> 0.2.0)
     tzinfo (1.2.1)
       thread_safe (~> 0.1)
     tzinfo-data (1.2014.5)
@@ -177,6 +236,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin!
   coffee-rails (~> 4.0.0)
+  country_select!
   devise
   jbuilder (~> 2.0)
   jquery-rails
@@ -185,7 +245,10 @@ DEPENDENCIES
   rails_12factor
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
+  simple_form
   sqlite3
   turbolinks
+  tweetstream (~> 2.6.1)
+  twitter (~> 5.11.0)
   tzinfo-data
   uglifier (>= 1.3.0)

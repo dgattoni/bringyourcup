@@ -27,6 +27,7 @@
        <%= truncate(pin.description , :length => 140) %>
 
         </p>
+        <p><%= pin.user_id %></p>
         <p>
         <%= link_to 'Ver', pin, :class => 'btn btn-danger btn-sm' %>
         <%= link_to 'Editar', edit_pin_path(pin), :class => 'btn btn-danger btn-sm' %>

@@ -33,6 +33,10 @@
  
 
 
+
+
+
+
       <!-- Three columns of text below the carousel -->
       <div class="row">
         <div class="col-lg-4">
@@ -119,9 +123,20 @@
       </div>
 
       <hr class="featurette-divider">
-
+ 
        
-       
+      <div class="row">
+        <div class="col-md-7">
+            <ul>
+            <% @tweet_news.each do |f| %>
+            <li>
+            <%= f.text%>
+            <span><%= time_ago_in_words(f.created_at) %> ago</span>
+            </li>
+            <% end %>
+            </ul>
+        </div>
+        </div>
  
       <!-- /END THE FEATURETTES -->
 

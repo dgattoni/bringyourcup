@@ -28,6 +28,7 @@ class PinsController < ApplicationController
 
   # GET /pins/1/edit
   def edit
+     
   end
 
   # POST /pins
@@ -38,7 +39,7 @@ class PinsController < ApplicationController
  
     
     #de la tabla Pin al campo "user_id" que se almacene el idusuario de usuario actual.
-    @pin.user_id = current_user.id 
+     @pin.user_id = current_user.id 
 
     respond_to do |format|
       if @pin.save
@@ -83,6 +84,6 @@ class PinsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pin_params
-      params.require(:pin).permit(:title, :photo, :description, :destacado)
+      params.require(:pin).permit(:title, :photo, :description, :destacado, :email, :user_id)
     end
 end

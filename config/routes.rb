@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :categories
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users
@@ -8,6 +10,7 @@ Rails.application.routes.draw do
   get 'welcome/nosotros'
   get 'welcome/descubre'
   get 'welcome/fullscreen'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

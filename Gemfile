@@ -10,7 +10,8 @@ gem 'rails_12factor', group: :production
 gem 'devise'
 
 gem 'activeadmin', github: 'gregbell/active_admin'
-
+gem 'simple_form'
+gem 'country_select', github: 'stefanpenner/country_select'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -19,6 +20,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
+gem 'twitter', '~> 5.11.0'
+gem 'tweetstream', '~> 2.6.1'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
