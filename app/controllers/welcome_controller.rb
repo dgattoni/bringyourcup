@@ -23,10 +23,7 @@ class WelcomeController < ApplicationController
 
     @tweet_news = client.get_all_tweets("danigattoni_")
 
-
-    @tweet_blues = client.search("to:danigattoni_ blues", :result_type => "recent").take(3).collect do |tweet|
-    "#{tweet.user.screen_name}: #{tweet.text}"
-    end
+  
 
   end
 

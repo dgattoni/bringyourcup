@@ -143,25 +143,21 @@
           <div class="row">
         <div class="col-md-7">
 
-        <p>Mis últimos Tweets:</p>
+        <p>Mis últimos Tweets2:</p>
             <ul>
-            <% @tweet_blues.each do |f| %>
+             
             <li>
-            <%= f.text%>
-            <span>  <%= time_ago_in_words(f.created_at) %> ago</span>
+          <% client.search("to:justinbieber marry me", :result_type => "recent").take(3).each do |tweet|
+          puts tweet.text
+          end  %>
+            
             </li>
             <% end %>
             </ul>
         </div>
         </div>
 
-        <%
-topics = ["coffee", "tea"]
-client.filter(:track => topics.join(",")) do |object|
-  puts object.text if object.is_a?(Twitter::Tweet)
-end
 
-        %>
  
       <!-- /END THE FEATURETTES -->
 
