@@ -133,12 +133,29 @@
             <% @tweet_news.each do |f| %>
             <li>
             <%= f.text%>
-            <span><span class="glyphicon glyphicon-comment"></span>  <%= time_ago_in_words(f.created_at) %> ago</span>
+            <span>  <%= time_ago_in_words(f.created_at) %> ago</span>
             </li>
             <% end %>
             </ul>
         </div>
         </div>
+
+          <div class="row">
+        <div class="col-md-7">
+
+        <p>Mis últimos Tweets:</p>
+            <ul>
+            <% @tweet_blues.each do |f| %>
+            <li>
+            <%= f.text%>
+            <span>  <%= time_ago_in_words(f.created_at) %> ago</span>
+            </li>
+            <% end %>
+            </ul>
+        </div>
+        </div>
+
+        
  
       <!-- /END THE FEATURETTES -->
 
