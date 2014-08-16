@@ -23,7 +23,7 @@ class WelcomeController < ApplicationController
 
     @tweet_news = client.get_all_tweets("danigattoni_")
 
-  
+     @tweet_update = client.update("I'm tweeting with @gem!")
 
   end
 
