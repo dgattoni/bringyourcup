@@ -15,20 +15,21 @@ class WelcomeController < ApplicationController
     config.access_token_secret = "9w5GsOzAitaDl13KGFFFvu7oLmT1xQpJpEAALFzDWdmbG" 
     end
 
-    def client.get_all_tweets(user)
-    options = {:count => 8, :include_rts => true}
-    user_timeline(user, options)
+    # def client.get_all_tweets(user)
+    # options = {:count => 8, :include_rts => true}
+    # user_timeline(user, options)
+    # end
+
+    def client.get_followers()       
+
+    options = {:cursor => -1, :screen_name => 'danigattoni_' :count => 20, }
+    followers(options)
     end
 
-    def client.get_followers(user)
-    options = {:count => 8}
-    followers(user, options)
-    end
 
 
-
-    @tweet_followers = client.get_followers("danigattoni_")
-    @tweet_news = client.get_all_tweets("danigattoni_")
+    @tweet_followers = client.get_followers()
+    #@tweet_news = client.get_all_tweets("danigattoni_")
 
     # @tweet_update = client.update("I'm tweeting with @gem!")
     
