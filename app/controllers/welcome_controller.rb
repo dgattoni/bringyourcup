@@ -13,16 +13,12 @@ class WelcomeController < ApplicationController
     config.access_token_secret = "9w5GsOzAitaDl13KGFFFvu7oLmT1xQpJpEAALFzDWdmbG" 
     end
 
-    # def client.get_all_tweets(user)
-    # options = {:count => 8, :include_rts => true}
-    # user_timeline(user, options)
-    # end
-
     def client.get_all_tweets(user)
-    options = {:count => 8}
-    mentions_timeline(user, options)
+    options = {:count => 8, :include_rts => true}
+    user_timeline(user, options)
     end
-  
+
+    
      @tweet_news = client.get_all_tweets("danigattoni_")
  
   end
