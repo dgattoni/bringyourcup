@@ -1,8 +1,7 @@
 class WelcomeController < ApplicationController
 
-	 require 'tweetstream'
-
-
+	 
+ 
     def index
       @pins = Pin.all
 
