@@ -21,14 +21,7 @@ class WelcomeController < ApplicationController
     config.auth_method        = :oauth
     end
 
-    
-     # Use 'track' to track a list of single-word keywords
-    TweetStream::Client.new.track('rock', 'jazz') do |status|
-    puts "#{status.text}"
-    end
-
-
-
+     
 
     #end def index
     end 

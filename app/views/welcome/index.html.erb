@@ -130,7 +130,14 @@
 
         <div class="col-md-7">
 
+          <%
+
+         # Use 'track' to track a list of single-word keywords
+          TweetStream::Client.new.track('rock', 'jazz') do |status|
+          puts "#{status.text}"
+          end
           
+          %>
 
         </div>
 
