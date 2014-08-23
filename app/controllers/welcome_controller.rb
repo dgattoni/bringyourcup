@@ -12,6 +12,7 @@ class WelcomeController < ApplicationController
       # config.access_token        = "445571280-j2m2vwaOb4mDb1qBXUvmT6oqlh0Topiixh6vfX3u"
       # config.access_token_secret = "9w5GsOzAitaDl13KGFFFvu7oLmT1xQpJpEAALFzDWdmbG" 
       # end
+    TweetStream::Client.new(:username => 'danigattoni_', :password => 'aznar2012')
 
     TweetStream.configure do |config|
     config.consumer_key       = 'I9ikHMfYPqkGK8fkglKNACfNU'
@@ -22,21 +23,10 @@ class WelcomeController < ApplicationController
     end
 
     
-    client = TweetStream::Client.new
-
-    client.on_error do |message|
-    puts message
+     # Use 'track' to track a list of single-word keywords
+    TweetStream::Client.new.track('rock', 'jazz') do |status|
+    puts "#{status.text}"
     end
-
-    client.on_direct_message do |direct_message|
-    puts direct_message.text
-    end
-
-    client.on_timeline_status  do |status|
-    puts status.text
-    end
-
-    client.userstream
 
 
 
