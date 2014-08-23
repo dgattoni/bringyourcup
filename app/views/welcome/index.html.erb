@@ -137,7 +137,10 @@
           <ul>
             <% @jazztweets.each  do |f| %>
             <li>
-            <%= f.text%>
+            
+
+             <%= puts "[#{status.user.screen_name}] #{status.text}" %>
+
             </li>
           <%  end %>
           </ul>  

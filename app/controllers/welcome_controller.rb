@@ -11,7 +11,7 @@ class WelcomeController < ApplicationController
       # config.access_token        = "445571280-j2m2vwaOb4mDb1qBXUvmT6oqlh0Topiixh6vfX3u"
       # config.access_token_secret = "9w5GsOzAitaDl13KGFFFvu7oLmT1xQpJpEAALFzDWdmbG" 
       # end
-    TweetStream::Client.new(:username => 'danigattoni_', :password => 'aznar2012')
+   # TweetStream::Client.new(:username => 'danigattoni_', :password => 'aznar2012')
 
     TweetStream.configure do |config|
     config.consumer_key       = 'I9ikHMfYPqkGK8fkglKNACfNU'
@@ -20,8 +20,10 @@ class WelcomeController < ApplicationController
     config.oauth_token_secret = '9w5GsOzAitaDl13KGFFFvu7oLmT1xQpJpEAALFzDWdmbG'
     config.auth_method        = :oauth
     end
+#      TweetStream::Client.new('user','pass').track('fail') 
 
-    @jazztweets = TweetStream::Client.new.track('jazz')
+
+    @jazztweets = TweetStream::Client.new.('danigattoni_','aznar2012').track('feedback')
 
     #end def index
     end 
