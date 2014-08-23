@@ -126,9 +126,10 @@
  
        
       <div class="row">
+
+
         <div class="col-md-7">
 
-        
             <p>Mis últimos Tweets:</p>
             <ul>
             <% @tweet_news.each do |f| %>
@@ -141,6 +142,17 @@
 
 
         </div>
+
+        <div class="col-md-7">
+         <% topics = ["coffee", "tea"]
+        otroclient.filter(:track => topics.join(",")) do |object|
+        puts object.text if object.is_a?(Twitter::Tweet)
+        %>
+
+        
+        </div>
+
+
         </div>
 
            
