@@ -12,23 +12,15 @@ class WelcomeController < ApplicationController
     config.access_token        = "445571280-j2m2vwaOb4mDb1qBXUvmT6oqlh0Topiixh6vfX3u"
     config.access_token_secret = "9w5GsOzAitaDl13KGFFFvu7oLmT1xQpJpEAALFzDWdmbG" 
     end
-
-  otroclient = Twitter::Streaming::Client.new do |config2|
-  config2.consumer_key        = "I9ikHMfYPqkGK8fkglKNACfNU"
-  config2.consumer_secret     = "pQQ7rCkMin7GvQdsaFvPtahthIjdiUwQpIkx5miZmh0wJU1Uzz"
-  config2.access_token        = "445571280-j2m2vwaOb4mDb1qBXUvmT6oqlh0Topiixh6vfX3u"
-  config2.access_token_secret = "9w5GsOzAitaDl13KGFFFvu7oLmT1xQpJpEAALFzDWdmbG"
-
  
-  
-end
-
 
 end
 
 
 
-    def client.get_all_tweets(user)
+  def client.get_all_tweets(user)
+    
+
     options = {:count => 8, :include_rts => true}
     user_timeline(user, options)
     end
@@ -39,12 +31,15 @@ end
   end
 
 
+
+
   def nosotros
   end
 
+
+
   def fullscreen
-  	 @pins = Pin.all
-  	 
+  	 @pins = Pin.all  	 
   end
 
 end
