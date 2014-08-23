@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
 
-	 
+	 require 'tweetstream'
 
 
     def index
@@ -21,13 +21,23 @@ class WelcomeController < ApplicationController
     config.auth_method        = :oauth
     end
 
-    # This will pull a sample of all tweets based on
-    # your Twitter account's Streaming API role.
-    TweetStream::Client.new.sample do |status|
-    # The status object is a special Hash with
-    # method access to its keys.
-    puts "#{status.text}"
+    
+    client = TweetStream::Client.new
+
+    client.on_error do |message|
+    puts message
     end
+
+    client.on_direct_message do |direct_message|
+    puts direct_message.text
+    end
+
+    client.on_timeline_status  do |status|
+    puts status.text
+    end
+
+    client.userstream
+
 
 
 
