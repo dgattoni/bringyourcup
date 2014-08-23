@@ -21,7 +21,7 @@ class WelcomeController < ApplicationController
     config.auth_method        = :oauth
     end
 
-     
+    @jazztweets = TweetStream::Client.new.track('jazz')
 
     #end def index
     end 
