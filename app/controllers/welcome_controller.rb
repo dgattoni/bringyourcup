@@ -49,7 +49,7 @@ class WelcomeController < ApplicationController
       
     username = 'danigattoni_'
     options = {"#nowplaying", :count => 5, :include_rts => true}
-    @search =  $client.user_timeline(username, options)
+    @search = user_timeline(username, options)
 
 
 
