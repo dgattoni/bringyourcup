@@ -34,8 +34,10 @@ class WelcomeController < ApplicationController
       end
 
      # topics = ["rock"]
-      
-      @search = client.search("rock", :count => 4, :result_type => "recent")
+      #client.search("#ruby -rt", :lang => "ja").first.text 
+
+
+      @search = client.search("#rock -rt", :lang => "cl", :count => 8)
 
       #client.search("to:justinbieber marry me", :result_type => "recent").take(3).each do |tweet|
       
