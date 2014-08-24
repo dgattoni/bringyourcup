@@ -38,6 +38,15 @@ class WelcomeController < ApplicationController
             #@search = client.search("#DondeGuido -rt", :lang => "es").take(3).collect
         #-----------------------------------------------------------------------------
      
+    #---EJEMPLO OK 2: -------------------------------------------------------------------------------
+    username = 'meligatt'
+    options = {:count => 3, :include_rts => true}
+    @search = client.user_timeline(username, options)
+    #---EJEMPLO OK 2: -------------------------------------------------------------------------------
+
+
+    #---EJEMPLO OK 3: -------------------------------------------------------------------------------
+
 
      # topics = ["rock"]
       #client.search("#ruby -rt", :lang => "ja").first.text 
@@ -47,10 +56,6 @@ class WelcomeController < ApplicationController
 
       #client.search("to:justinbieber marry me", :result_type => "recent").take(3).each do |tweet|
       
-    username = 'danigattoni_'
-    options = {:count => 3, :include_rts => true}
-    @search = client.user_timeline(username, options)
-
 
     #end def index
     end 
