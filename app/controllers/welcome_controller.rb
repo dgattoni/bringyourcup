@@ -33,17 +33,26 @@ class WelcomeController < ApplicationController
         config.access_token_secret = "9w5GsOzAitaDl13KGFFFvu7oLmT1xQpJpEAALFzDWdmbG" 
       end
 
+      #----------------------------------------------------------------------------------
+        #EJEMPLO OK 1:
+            #@search = client.search("#DondeGuido -rt", :lang => "es").take(3).collect
+        #-----------------------------------------------------------------------------
+     
+
      # topics = ["rock"]
       #client.search("#ruby -rt", :lang => "ja").first.text 
 
 
-      @search = client.search("#DondeGuido -rt", :lang => "es").take(3).collect
+      
 
       #client.search("to:justinbieber marry me", :result_type => "recent").take(3).each do |tweet|
       
+    username = 'danigattoni_'
+    options = {"#nowplaying ", :count => 5, :include_rts => true}
+    @search = client.user_timeline(username, options)
 
-      #@search = client.search :q => 'Pearl Jam', :count => 8
-    
+
+
     #end def index
     end 
 
