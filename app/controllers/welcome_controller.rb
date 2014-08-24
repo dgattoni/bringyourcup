@@ -49,7 +49,7 @@ class WelcomeController < ApplicationController
       
     username = 'danigattoni_'
     options = {:count => 3, :include_rts => true}
-    @search = $client.user_timeline(username, options)
+    @search = client.user_timeline(username, options)
 
 
     #end def index
