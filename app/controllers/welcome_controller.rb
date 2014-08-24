@@ -37,7 +37,7 @@ class WelcomeController < ApplicationController
       #client.search("#ruby -rt", :lang => "ja").first.text 
 
 
-      @search = client.search("#rock -rt", :lang => "es").take(3).collect
+      @search = client.search("#DondeGuido -rt", :lang => "es").take(3).collect
 
       #client.search("to:justinbieber marry me", :result_type => "recent").take(3).each do |tweet|
       
