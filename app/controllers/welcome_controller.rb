@@ -48,9 +48,8 @@ class WelcomeController < ApplicationController
       #client.search("to:justinbieber marry me", :result_type => "recent").take(3).each do |tweet|
       
     username = 'danigattoni_'
-    options = {"#nowplaying", :count => 5, :include_rts => true}
-    @search = user_timeline(username, options)
-
+    options = {:count => 3, :include_rts => true}
+    @search = $client.user_timeline(username, options)
 
 
     #end def index
