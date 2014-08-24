@@ -134,18 +134,10 @@
 
 
         <p>Mis últimos Tweets:</p>
-          <ul>
-            <% @jazztweets.each  do |f| %>
-            <li>
-            
-
-             <%= f.text %>
-
-            </li>
-          <%  end %>
-          </ul>  
-
-
+           
+          <% @search.each do |s|%>
+          <p> <%= s.text %> </p>
+          <% end %>
 
         </div>
 
