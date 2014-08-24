@@ -55,7 +55,7 @@ class WelcomeController < ApplicationController
 
     #---EJEMPLO OK 4: -------------------------------------------------------------------------------
       topics = ["#TodalaRed","#AlertaMetro"]
-      @search = client.search(topics.join(","), :include_rts => true).take(5).collect
+      @search = client.search(topics.join(","), :include_rts => false).take(5).collect
 
 
 
