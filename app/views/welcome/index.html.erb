@@ -136,7 +136,10 @@
         <p>Mis últimos Tweets:</p>
            
           <% @search.each do |s|%>
-          <p> <%= s.text %> </p>
+          <p> <%= s.text %> 
+
+              <span style="color:red;"><%= time_ago_in_words(s.created_at) %> ago</span>
+          </p>
           <% end %>
 
         </div>
