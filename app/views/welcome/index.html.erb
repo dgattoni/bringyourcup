@@ -145,8 +145,8 @@
   
 
 
-        <% if params[:q] && params[:lati] && params[:longi] && params[:millas] %>
-
+        
+    <% if(params.has_value?(:q) && params.has_value?(:lati) && params.has_value?(:longi) && params.has_value?(:millas) ) %>
 
         <p>Topico buscado:  <strong><%= params[:q]  %> </strong></p>
             <% @search.each do |s|%>
