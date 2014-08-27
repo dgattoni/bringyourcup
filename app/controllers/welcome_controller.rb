@@ -5,6 +5,16 @@ class WelcomeController < ApplicationController
     def index
       @pins = Pin.all
 
+
+  
+#inicializando vars
+q=""
+lati=0
+longi=0
+millas=0
+
+
+
       # client = Twitter::REST::Client.new do |config|
       # config.consumer_key        = "I9ikHMfYPqkGK8fkglKNACfNU"
       # config.consumer_secret     = "pQQ7rCkMin7GvQdsaFvPtahthIjdiUwQpIkx5miZmh0wJU1Uzz"
@@ -66,16 +76,19 @@ class WelcomeController < ApplicationController
 
 
 #---EJEMPO OK 6: ----------------------------------
+     
 
-   
+
+       
       topics = [params[:q]]
 
 
-      lati =params[:lati]+","
-      longi=params[:longi]+","
-      millas=params[:millas]
-      coord = lati+longi+millas
-
+      #lati =params[:lati]+","
+      #longi=params[:longi]+","
+      #millas=params[:millas]
+      #coord = lati+longi+millas
+      coord ="-33,-70,100mi"
+      
       #"-33,-70,100mi"
       
      # @search = client.search(topics.join(","), :lang => "es", :geocode => "-33.4691199, -70.641997, 50km").take(5).collect

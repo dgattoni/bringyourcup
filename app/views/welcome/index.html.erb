@@ -1,14 +1,6 @@
 
 
-
-<% 
-#inicializando vars
-q=0
-lati=0
-longi=0
-millas=0
-
-%>
+ 
 
 <!-- aqui solo cargamos cosas que iran dentro del body-->
 
@@ -153,7 +145,7 @@ millas=0
 
 
         
-    <% if params.has_value?(:q)  %>
+    <% if (params.has_value?(:q))  %>
 
         <p>Topico buscado:  <strong><%= params[:q]  %> </strong></p>
             <% @search.each do |s|%>
