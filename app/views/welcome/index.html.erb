@@ -146,7 +146,7 @@
  
       
 
-        <% if params[:q]   %>
+        
 
 
 
@@ -154,13 +154,10 @@
 
 
         <p>Topico buscado:  <strong><%= params[:q]  %> </strong></p>
-          <% @search.each do |s|%>
-          <p> <%= s.text %> 
-
+            <% @search.each do |s|%>
+            <p> <%= s.text %></p>
+            <% end %>
             
-
-           </p>
-          <% end %>
         <% end %>
 
 
