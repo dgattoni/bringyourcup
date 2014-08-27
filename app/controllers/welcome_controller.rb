@@ -69,7 +69,7 @@ class WelcomeController < ApplicationController
 
    
       topics = [params[:q]]
-      @search = client.search(topics.join(","), :lang => "es", :include_rts => false, :exclude_replies => true, :geocode => true).take(5)
+      @search = client.search(topics.join(","), :lang => "es", :exclude_replies => true, :geocode => "1km").take(5).collect
 
       
 
