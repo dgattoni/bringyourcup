@@ -69,8 +69,8 @@ class WelcomeController < ApplicationController
 
                 
 
-      topics = ["rock"]
-      @search = client.search(topics.join(",")).take(5).collect
+      topics = [params[:q]]
+      @search = client.search(topics.join(","), :lang => "es").take(5).collect
 
 
      
