@@ -87,8 +87,8 @@ millas=0
       #longi=params[:longi]+","
       #millas=params[:millas]
       #coord = lati+longi+millas
-      coord ="-33,-70,100mi"
-      
+      coord ="-33,-70,1000mi"
+
       #"-33,-70,100mi"
       
      # @search = client.search(topics.join(","), :lang => "es", :geocode => "-33.4691199, -70.641997, 50km").take(5).collect
