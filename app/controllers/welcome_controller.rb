@@ -70,9 +70,9 @@ class WelcomeController < ApplicationController
     if params[:q]              
 
       topics = [params[:q]]
-      @search = client.search(topics.join(","))
+      @search = client.search(topics.join(",")).take(5).collect
 
-      
+
     end
 
 
