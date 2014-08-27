@@ -73,7 +73,7 @@ class WelcomeController < ApplicationController
       
      # @search = client.search(topics.join(","), :locale => "cl" , :geocode => "-33,-70,100mi").take(5).collect
       
-      @search = client.search(topics.join(","), :locale => "cl", :geocode => "-33,-70,25km").take(5).collect
+      @search = client.search(topics.join(","), :locale => "cl", :geocode => "-33,-70,1mi").take(5).collect
 
 #--------------------------------------------
 
