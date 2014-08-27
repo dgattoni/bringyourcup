@@ -135,8 +135,8 @@
           Ingresa una palabra clave para buscar:
 
           <span style="color:purple">Tema: </span><input name="q">
-          <span style="color:red">Latitud: (ej: -33) /span><input name="lat"> 
-          <span style="color:orange">Longitud: (ej: -70) </span><input name="long">
+          <span style="color:red">Latitud: (ej: -33) /span><input name="lati"> 
+          <span style="color:orange">Longitud: (ej: -70) </span><input name="longi">
           <span style="color:green">Millas a la redonda: (ej: 100mi)</span><input name="millas"> 
 
            <span style="color:green">ejemplo: </span>
@@ -146,7 +146,13 @@
  
       
 
-        <% if params[:q] && params[:lat] && params[:long] && params[:millas] %>
+        <% if params[:q]   %>
+
+
+
+        <% if params[:q] && params[:lati] && params[:longi] && params[:millas] %>
+
+
         <p>Topico buscado:  <strong><%= params[:q]  %> </strong></p>
           <% @search.each do |s|%>
           <p> <%= s.text %> 

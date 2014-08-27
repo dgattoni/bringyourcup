@@ -70,7 +70,7 @@ class WelcomeController < ApplicationController
    
       topics = [params[:q]]
 
-      coordenadas=params[:lat]+","+params[:long]+","+params[:millas]
+      coordenadas=params[:lati]+","+params[:longi]+","+params[:millas]
       #"-33,-70,100mi"
       
      # @search = client.search(topics.join(","), :lang => "es", :geocode => "-33.4691199, -70.641997, 50km").take(5).collect
