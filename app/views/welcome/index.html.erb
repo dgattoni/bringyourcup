@@ -133,16 +133,27 @@
         <div class="col-md-7">
           <form>
           Ingresa una palabra clave para buscar:
-          <span style="color:purple">#</span><input name="q"> 
+
+          <span style="color:purple">Tema: </span><input name="q">
+          <span style="color:red">Latitud: (ej: -33) /span><input name="lat"> 
+          <span style="color:orange">Longitud: (ej: -70) </span><input name="long">
+          <span style="color:green">Millas a la redonda: (ej: 100mi)</span><input name="millas"> 
+
+           <span style="color:green">ejemplo: </span>
           <input type="submit">
           </form>
 
-
+ 
+      
 
         <% if params[:q]   %>
-        <p>Mis últimos Tweets: Topico buscado:  <%= params[:q]  %> </p>
+        <p>Topico buscado:  <strong><%= params[:q]  %> </strong></p>
           <% @search.each do |s|%>
-          <p> <%= s.text %> </p>
+          <p> <%= s.text %> 
+
+           <span style="color:red;"><%= time_ago_in_words(s.created_at) %> 
+
+           </p>
           <% end %>
         <% end %>
 

@@ -69,11 +69,15 @@ class WelcomeController < ApplicationController
 
    
       topics = [params[:q]]
+
+      coordenadas=params[:lat]+","+params[:long]+","+params[:millas]
+      #"-33,-70,100mi"
+      
      # @search = client.search(topics.join(","), :lang => "es", :geocode => "-33.4691199, -70.641997, 50km").take(5).collect
       
      # @search = client.search(topics.join(","), :locale => "cl" , :geocode => "-33,-70,100mi").take(5).collect
       
-      @search = client.search(topics.join(","), :geocode => "-33,-70,100mi").take(5).collect
+      @search = client.search(topics.join(","), :geocode => coordenadas).take(5).collect
 
 #--------------------------------------------
 
