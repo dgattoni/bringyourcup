@@ -132,22 +132,19 @@
 
         <div class="col-md-7">
           <form>
-          Ingresa un resultado de busqueda
-          <input name="q"> 
+          Ingresa una palabra clave para buscar:
+          <span style="color:purple">#</span><input name="q"> 
           <input type="submit">
           </form>
 
 
 
-          <p>Mis últimos Tweets: </p>
-          
-
-            <% if params[:q]   %>
-                <% @search.each do |s|%>
-                <p> <%= s.text %> </p>
-                <% end %>
-
-            <% end %>
+        <% if params[:q]   %>
+        <p>Mis últimos Tweets: Topico buscado:  <%= params[:q]  %> </p>
+          <% @search.each do |s|%>
+          <p> <%= s.text %> </p>
+          <% end %>
+        <% end %>
 
 
 
