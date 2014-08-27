@@ -133,7 +133,7 @@
        
 
 
-        <p>Mis últimos Tweets:</p>
+        <p>Mis últimos Tweets_:</p>
            
           <% @search.each do |s|%>
           <p> <%= s.text %> 
@@ -145,7 +145,22 @@
         </div>
 
         <div class="col-md-7">
-        
+          <form>
+          Ingresa un resultado de busqueda
+          <input name="q"> 
+          <input type="submit">
+          </form>
+
+
+          <p>Mis últimos Tweets: </p>
+          <% @search.each do |s|%>
+          <p> <%= s.text %> </p>
+          <% end %>
+
+
+
+
+          
 
         
         </div>

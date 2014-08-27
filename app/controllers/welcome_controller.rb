@@ -58,11 +58,25 @@ class WelcomeController < ApplicationController
      # @search = client.search(topics.join(","), :include_rts => false).take(3).collect
 
   #---EJEMPLO OK 5: -------------------------------------------------------------------------------
-       username = 'metrodesantiago'
-       options = {:count => 3, :include_rts => false, :exclude_replies => true}
-       @search = client.user_timeline(username, options)
+       #username = 'metrodesantiago'
+       #options = {:count => 3, :include_rts => false, :exclude_replies => true}
+      # @search = client.user_timeline(username, options)
     #---EJEMPLO OK 5: -------------------------------------------------------------------------------
 
+
+
+#---EJEMPO OK 6: ----------------------------------
+
+    if params[:q]              
+
+      topics = [params[:q]]
+      @search = client.search(topics.join(","))
+
+      
+    end
+
+
+#--------------------------------------------
 
      # topics = ["rock"]
       #client.search("#ruby -rt", :lang => "ja").first.text 
