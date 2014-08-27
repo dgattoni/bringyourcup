@@ -71,7 +71,7 @@ class WelcomeController < ApplicationController
       topics = [params[:q]]
      # @search = client.search(topics.join(","), :lang => "es", :geocode => "-33.4691199, -70.641997, 50km").take(5).collect
       
-      @search = client.search(topics.join(","), :locale => "cl" , :geocode => "-33.4691199, -70.641997, 100km").take(5).collect
+      @search = client.search(topics.join(","), :locale => "cl" , :geocode => "-33.4691199, -70.641997, 100mi").take(5).collect
       
 
 #--------------------------------------------
