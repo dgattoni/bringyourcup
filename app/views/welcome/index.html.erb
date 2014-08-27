@@ -134,20 +134,15 @@
           <form>
           Ingresa una palabra clave para buscar:
 
-          <span style="color:purple">Tema: </span><input name="q">
-          <span style="color:red">Latitud: (ej: -33) /span><input name="lati"> 
-          <span style="color:orange">Longitud: (ej: -70) </span><input name="longi">
-          <span style="color:green">Millas a la redonda: (ej: 100mi)</span><input name="millas"> 
-
-           <span style="color:green">ejemplo: </span>
+          <span style="color:purple">Tema: </span><input name="q"><br>
+          <span style="color:red">Latitud: (ej: -33) </span><input name="lati"> <br>
+          <span style="color:orange">Longitud: (ej: -70) </span><input name="longi"><br>
+          <span style="color:green">Millas a la redonda: (ej: 100mi)</span><input name="millas"> <br>
+ 
           <input type="submit">
           </form>
 
- 
-      
-
-        
-
+  
 
 
         <% if params[:q] && params[:lati] && params[:longi] && params[:millas] %>
@@ -157,7 +152,7 @@
             <% @search.each do |s|%>
             <p> <%= s.text %></p>
             <% end %>
-            
+
         <% end %>
 
 
