@@ -128,21 +128,7 @@
       <div class="row">
 
 
-        <div class="col-md-7">
-
        
-
-
-        <p>Mis últimos Tweets_:</p>
-           
-          <% @search.each do |s|%>
-          <p> <%= s.text %> 
-
-              <span style="color:red;"><%= time_ago_in_words(s.created_at) %> ago</span>
-          </p>
-          <% end %>
-
-        </div>
 
         <div class="col-md-7">
           <form>

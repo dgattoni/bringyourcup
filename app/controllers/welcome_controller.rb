@@ -67,13 +67,13 @@ class WelcomeController < ApplicationController
 
 #---EJEMPO OK 6: ----------------------------------
 
-    if params[:q]              
+                
 
-      topics = [params[:q]]
+      topics = ["rock"]
       @search = client.search(topics.join(",")).take(5).collect
 
 
-    end
+     
 
 
 #--------------------------------------------
