@@ -138,15 +138,21 @@
           </form>
 
 
+
           <p>Mis últimos Tweets: </p>
-          <% @search.each do |s|%>
-          <p> <%= s.text %> </p>
-          <% end %>
-
-
-
-
           
+
+            <% if params[:q]   %>
+                <% @search.each do |s|%>
+                <p> <%= s.text %> </p>
+                <% end %>
+
+            <% end %>
+
+
+
+
+
 
         
         </div>
