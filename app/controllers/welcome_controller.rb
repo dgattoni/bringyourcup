@@ -36,6 +36,8 @@ class WelcomeController < ApplicationController
        username = 'danigattoni_'
        options = { :until=>'2014-08-24', :count => 10, :include_rts => 0, :exclude_replies => 1, :retweeted => 0, :result_type=> 'recent' }
        @search = $client.user_timeline(username, options)
+       $foto = $client.profile_image(username)
+       
     #---EJEMPLO OK 5: -------------------------------------------------------------------------------
 
 
