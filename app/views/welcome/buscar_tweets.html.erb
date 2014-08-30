@@ -25,15 +25,7 @@
 
         <div class="col-lg-4 bg-tweets">
  
-             
-        		 
-
-					<p>Topico buscado:  <strong><%= params[:q]  %> </strong></p>
-					<% @search.each do |s|%>
-					<p> <%= s.text %></p>
-					<% end %>
-
-          		 
+              
 
 					 <form method="get">
 					<span style="color:purple">Palabra: </span><input name="q"><br>
@@ -43,8 +35,12 @@
 					<input type="submit">
 					</form>
 
-				
-            	 
+					<p>Topico buscado:  <strong><%= params[:q]  %> </strong></p>
+					<% @search.each do |s|%>
+					<p> <%= s.text %></p>
+					<% end %>
+
+          		 
  
 
               <h4 class="text-info"> 
