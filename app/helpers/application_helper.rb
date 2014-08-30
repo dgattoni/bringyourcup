@@ -8,23 +8,23 @@ module ApplicationHelper
 
      case distance_in_minutes
        when 0..1
-         return (distance_in_minutes == 0) ? 'menos de um minuto' : '1 minuto' unless include_seconds
+         return (distance_in_minutes == 0) ? 'menos de un min' : '1 min' unless include_seconds
          case distance_in_seconds
-           when 0..4   then 'menos de 5 segundos'
-           when 5..9   then 'menos de 10 segundos'
-           when 10..19 then 'menos de 20 segundos'
-           when 20..59 then 'menos de um minuto'
+           when 0..4   then 'menos de 5 seg'
+           when 5..9   then 'menos de 10 seg'
+           when 10..19 then 'menos de 20 seg'
+           when 20..59 then 'menos de um min'
          else             '1 minuto'
          end
 
         when 2..44           then "#{distance_in_minutes} minutos"
-        when 45..89          then 'aproximadamente 1 hora'
-        when 90..1439        then "aproximadamente #{(distance_in_minutes.to_f / 60.0).round} horas"
+        when 45..89          then 'hace 1 hora'
+        when 90..1439        then "hace #{(distance_in_minutes.to_f / 60.0).round} horas"
         when 1440..2879      then '1 dia'
         when 2880..43199     then "#{(distance_in_minutes / 1440).round} dias"
-        when 43200..86399    then 'aproximadamente 1 mes'
+        when 43200..86399    then 'hace 1 mes'
         when 86400..525959   then "#{(distance_in_minutes / 43200).round} meses"
-        when 525960..1051919 then 'aproximadamente 1 año'
+        when 525960..1051919 then 'hace 1 año'
      else                      "mas de #{(distance_in_minutes / 525960).round} años"
 
    end
