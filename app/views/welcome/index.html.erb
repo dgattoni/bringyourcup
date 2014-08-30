@@ -30,14 +30,13 @@
             <div class="col-lg-10">
 
             <h1>Últimos Tweets de Conciertos Comentados</h1>
-              <ul>
-              <% @search.each  do |f| %>
-                <li> <%= image_tag("music16.png", class:"img-responsive") %> 
-                <%= f.text%>
-                </li>
-              <%  end %>
-              </ul>  
-            
+          <% @search.each  do |f| %>
+          <div class="alert alert-info" role="alert">
+          <%= image_tag("music16.png", class:"img-responsive pull-left") %> 
+          <%= f.text%>
+          </div>
+          <%  end %>
+             
             </div>
        </div>
    </div>
