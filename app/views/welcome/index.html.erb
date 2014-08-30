@@ -25,22 +25,22 @@
 
 </div><!-- //fin de Jumbotron-->
 
+<div class="container">
+     <div class="row">
+            <div class="col-lg-10">
 
- <div class="row">
-                <div class="col-lg-12">
-
-                <h1>Últimos Tweets de Conciertos Comentados</h1>
-                  <ul>
-                  <% @search.each  do |f| %>
-                    <li> <%= image_tag("music_nodes-32.png", class:"img-responsive") %> 
-                    <%= f.text%>
-                    </li>
-                  <%  end %>
-                  </ul>  
-                
-                </div>
-        </div>
-
+            <h1>Últimos Tweets de Conciertos Comentados</h1>
+              <ul>
+              <% @search.each  do |f| %>
+                <li> <%= image_tag("music16.png", class:"img-responsive") %> 
+                <%= f.text%>
+                </li>
+              <%  end %>
+              </ul>  
+            
+            </div>
+       </div>
+   </div>
 
 
 
