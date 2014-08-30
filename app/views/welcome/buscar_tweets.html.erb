@@ -1,0 +1,182 @@
+
+
+ 
+
+<!-- aqui solo cargamos cosas que iran dentro del body-->
+
+<div class="jumbotron">
+
+			<div class="container">
+
+      <div class="col-lg-8">
+				<p>
+
+
+       <%= image_tag("titulo_conciertos_comentados.png", class:"img-responsive") %>
+
+				</p>
+				 
+				<h2>
+				 Proyecto musical <span class="text-info">urbano</span> que surge de la necesidad de recopilar extractos de músicos que llevan su arte a las <span class="text-info">calles</span> y escenarios del <span class="text-info">mundo</span>. 
+				 <a class="btn btn-sm btn-default" role="button" href="#">Leer más »</a>
+				</h2>
+        </div>
+
+
+        <div class="col-lg-4 bg-tweets">
+ 
+             
+        		<% if params[:q] && params[:lati] && params[:longi] && params[:millas] %>
+					<form>
+					<span style="color:purple">Palabra: </span><input name="q"><br>
+					<span style="color:purple">Latitud: (ej: -33) </span><input name="lati"> <br>
+					<span style="color:purple">Longitud: (ej: -70) </span><input name="longi"><br>
+					<span style="color:purple">Millas a la redonda: (ej: 100mi)</span><input name="millas"> <br>
+					<input type="submit">
+					</form>
+          
+					<p>Topico buscado:  <strong><%= params[:q]  %> </strong></p>
+					<% @search.each do |s|%>
+					<p> <%= s.text %></p>
+					<% end %>
+
+            <% end %>
+ 
+
+              <h4 class="text-info"> 
+              <%= image_tag($mifoto, class:"pull-right") %>              
+              </h4>
+              
+              
+         </div>
+ 
+				  
+
+			</div><!-- //fin de container-->
+
+</div><!-- //fin de Jumbotron-->
+
+ 
+
+
+<div class="container">
+ <div class="container marketing">
+
+ 
+
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="col-lg-4">
+          <img style="width: 140px; height: 140px;" alt="Generic placeholder image" src="https://i.ytimg.com/vi/nZhZQx-5LrQ/mqdefault.jpg" class="img-circle">
+          <h2>CC: beatbox chileno</h2>
+          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+          <p><a role="button" href="<%= welcome_fullscreen_path %>" class="btn btn-default">Descubrir »</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img style="width: 140px; height: 140px;" alt="Generic placeholder image" src="https://i.ytimg.com/vi/4ridVan2qsM/mqdefault.jpg" class="img-circle">
+          <h2>CC: Violin and Didgeridoo</h2>
+          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+          <p><a role="button" href="<%= welcome_fullscreen_path %>" class="btn btn-default">Descubrir »</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img style="width: 140px; height: 140px;" alt="Generic placeholder image" src="https://i.ytimg.com/vi/1zBqnGe71JA/mqdefault.jpg" class="img-circle">
+          <h2>CC: Romina, Acordeón</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p><a role="button" href="<%= welcome_fullscreen_path %>" class="btn btn-default">Descubrir »</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+
+
+      <!-- START THE FEATURETTES -->
+
+ 
+
+
+ 
+       
+
+
+
+
+<div class="row">
+          <div class="col-lg-12">
+            <div class="page-header">
+              <h1 id="type">Nuestras influencias musicales...</h1>
+              
+            </div>
+
+          </div>
+
+ 
+   </div>
+
+     
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Banda Mala Hierba. <span class="text-muted">Me invitaron a un día de ensayo.</span></h2>
+          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+        <div class="col-md-5">
+          <img alt="500x500" data-src="holder.js/500x500/auto" class="featurette-image img-responsive" src="https://i.ytimg.com/vi/QTOFlgWVhQY/0.jpg">
+        </div>
+      </div>
+
+     <div class="row">
+          <div class="col-lg-12">
+            <div class="page-header">
+              <h1 id="type">Musicos en las Calles...</h1>
+              
+            </div>
+          </div>
+        </div>
+
+      <div class="row featurette">
+        <div class="col-md-5">
+          <img alt="500x500" data-src="holder.js/500x500/auto" class="featurette-image img-responsive" src="https://i.ytimg.com/vi/lMpZGAUGk8w/0.jpg">
+        </div>
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Cueca chora en Lastarria. <span class="text-muted">Pongase a bailar hace bien.</span></h2>
+          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+      </div>
+
+       <div class="row">
+          <div class="col-lg-12">
+            <div class="page-header">
+              <h1 id="type">Oda al...Saxofón</h1>
+              
+            </div>
+          </div>
+        </div>
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Saxofón y el Jazz. <span class="text-muted">Instrumentos de viento y otras hierbas.</span></h2>
+          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+        <div class="col-md-5">
+          <img alt="500x500" data-src="holder.js/500x500/auto" class="featurette-image img-responsive" src=" https://i.ytimg.com/vi/HIONSDlaOic/0.jpg">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+  
+
+      
+
+
+ 
+      <!-- /END THE FEATURETTES -->
+
+
+      <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#">Subir</a></p>
+        <p>&copy; 2014 ConciertosComentados · <a href="#">Privacy</a> · <a href="#">Todos los derechos compartidos</a></p>
+      </footer>
+
+    </div>
+
+</div>
