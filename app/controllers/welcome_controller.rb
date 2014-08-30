@@ -73,7 +73,7 @@ class WelcomeController < ApplicationController
 
     #$mifoto = $client.user('danigattoni_').profile_image_url("normal")
        
-     #topic = params[:q]
+     topic = "jazz" 
      #lati =params[:lati]
      #longi=params[:longi]
      #millas=params[:millas]
