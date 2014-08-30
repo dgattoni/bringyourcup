@@ -69,7 +69,7 @@ class WelcomeController < ApplicationController
     #   @tweet_news = client.get_all_tweets("danigattoni_")
     # end
 
-    def buscar_tweet
+    def buscar_tweets
 
     $mifoto = $client.user('danigattoni_').profile_image_url("normal")
        
