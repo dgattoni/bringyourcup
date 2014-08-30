@@ -71,7 +71,7 @@ class WelcomeController < ApplicationController
 
     def buscar_tweets
 
-    $mifoto = $client.user('danigattoni_').profile_image_url("normal")
+    #$mifoto = $client.user('danigattoni_').profile_image_url("normal")
        
      topics = params[:q]
      lati =params[:lati]+","
