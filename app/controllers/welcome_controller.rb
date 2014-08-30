@@ -34,7 +34,7 @@ class WelcomeController < ApplicationController
 
   #---EJEMPLO OK 5: -------------------------------------------------------------------------------
        username = 'danigattoni_'
-       options = { :until=>'2014-08-27', :count => 10, :include_rts => 0, :exclude_replies => 1, :retweeted => 0, :result_type=> 'mixed' }
+       options = { :until=>'2014-08-24', :count => 10, :include_rts => 0, :exclude_replies => 1, :retweeted => 0, :result_type=> 'recent' }
        @search = $client.user_timeline(username, options)
     #---EJEMPLO OK 5: -------------------------------------------------------------------------------
 

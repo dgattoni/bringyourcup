@@ -27,11 +27,17 @@
 
               <h4 class="text-info"> <%= image_tag("1409443310_twitter-bird2-webtreatsetc.png", class:"pull-right") %></h4>
               
-              <ul class="text-blanco small">
+              <ul class="list-unstyled  text-gris small">
               
-              <% @search.each  do |f| %>
+              <% @search.each  do |tweet| %>
 
-              <li><span class="glyphicon glyphicon-music text-gris"></span>&nbsp; <%= f.text%> </li>
+              <li>
+              <span class="glyphicon glyphicon-music text-info"></span>&nbsp; <%= tweet.text%> 
+              <span>  <%= time_ago_in_words(f.created_at) %> atrás</span>
+
+              <span>  tweet.profile_image_url </span>
+
+              </li>
 
               
 
