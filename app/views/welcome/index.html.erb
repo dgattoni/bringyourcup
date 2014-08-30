@@ -26,13 +26,17 @@
         <div class="col-lg-4 bg-tweets">
 
               <h4 class="text-info"> <%= image_tag("1409443310_twitter-bird2-webtreatsetc.png", class:"pull-right") %></h4>
+              
+              <dl class="dl-horizontal text-blanco small">
               <% @search.each  do |f| %>
-              <div class="text-blanco small" role="alert">
-               
-              <span class=""> <span class="glyphicon glyphicon-music"></span> <%= f.text%></span>
-              </div>
+
+              <dt><span class="glyphicon glyphicon-music text-gris"></dt>
+
+              <dd>&nbsp; <%= f.text%></dd>
+
+
               <%  end %>
-             
+              </dl>
          </div>
  
 				  
