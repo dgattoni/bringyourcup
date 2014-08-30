@@ -25,17 +25,21 @@
 
         <div class="col-lg-4 bg-tweets">
  
-              
-
+               
 					 <form>
 					<span style="color:purple">Palabra: </span><input name="q"><br>
+					<!-- 
 					<span style="color:purple">Latitud: (ej: -33) </span><input name="lati"> <br>
 					<span style="color:purple">Longitud: (ej: -70) </span><input name="longi"><br>
 					<span style="color:purple">Millas a la redonda: (ej: 100mi)</span><input name="millas"> <br>
+					-->
+					
 					<input type="submit">
 					</form>
 
-					 
+					 <% @search.each do |s|%>
+					<p> <%= s.text %></p>
+					<% end %>
  
  
               
