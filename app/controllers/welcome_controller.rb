@@ -4,38 +4,8 @@ class WelcomeController < ApplicationController
  
     def index
       @pins = Pin.all
-
-
+ 
   
-#inicializando vars
-q=""
-lati=0
-longi=0
-millas=0
-
-
-
-      # client = Twitter::REST::Client.new do |config|
-      # config.consumer_key        = "I9ikHMfYPqkGK8fkglKNACfNU"
-      # config.consumer_secret     = "pQQ7rCkMin7GvQdsaFvPtahthIjdiUwQpIkx5miZmh0wJU1Uzz"
-      # config.access_token        = "445571280-j2m2vwaOb4mDb1qBXUvmT6oqlh0Topiixh6vfX3u"
-      # config.access_token_secret = "9w5GsOzAitaDl13KGFFFvu7oLmT1xQpJpEAALFzDWdmbG" 
-      # end
-      #TweetStream::Client.new(:username => 'danigattoni_', :password => 'aznar2012')
-
-      # TweetStream.configure do |config|
-      # config.consumer_key       = 'I9ikHMfYPqkGK8fkglKNACfNU'
-      # config.consumer_secret    = 'pQQ7rCkMin7GvQdsaFvPtahthIjdiUwQpIkx5miZmh0wJU1Uzz'
-      # config.oauth_token        = '445571280-j2m2vwaOb4mDb1qBXUvmT6oqlh0Topiixh6vfX3u'
-      # config.oauth_token_secret = '9w5GsOzAitaDl13KGFFFvu7oLmT1xQpJpEAALFzDWdmbG'
-      # config.auth_method        = :oauth
-      # end
-      #      TweetStream::Client.new('user','pass').track('fail') 
-      #@jazztweets = TweetStream::Client.new.track('feedback')
-      #@client = TweetStream::Client.new('danigattoni_','aznar2012')
-      #  
-
-   #  if params[:q]
       client = Twitter::REST::Client.new do |config|
         config.consumer_key        = "I9ikHMfYPqkGK8fkglKNACfNU"
         config.consumer_secret     = "pQQ7rCkMin7GvQdsaFvPtahthIjdiUwQpIkx5miZmh0wJU1Uzz"
@@ -43,7 +13,7 @@ millas=0
         config.access_token_secret = "9w5GsOzAitaDl13KGFFFvu7oLmT1xQpJpEAALFzDWdmbG" 
       end
 
-      #----------------------------------------------------------------------------------
+    #----------------------------------------------------------------------------------
         #EJEMPLO OK 1:
             #@search = client.search("#DondeGuido -rt", :lang => "es").take(3).collect
         #-----------------------------------------------------------------------------
@@ -67,10 +37,11 @@ millas=0
       #topics = ["#TodalaRed","#AlertaMetro"]
      # @search = client.search(topics.join(","), :include_rts => false).take(3).collect
 
+
   #---EJEMPLO OK 5: -------------------------------------------------------------------------------
-       #username = 'metrodesantiago'
-       #options = {:count => 3, :include_rts => false, :exclude_replies => true}
-      # @search = client.user_timeline(username, options)
+       username = 'metrodesantiago'
+       options = {:count => 6, :include_rts => false, :exclude_replies => true}
+       @search = client.user_timeline(username, options)
     #---EJEMPLO OK 5: -------------------------------------------------------------------------------
 
 
@@ -80,14 +51,14 @@ millas=0
 
 
        
-      topics = [params[:q]]
+     # topics = [params[:q]]
 
 
-      #lati =params[:lati]+","
-      #longi=params[:longi]+","
-      #millas=params[:millas]
-      #coord = lati+longi+millas
-      coord ="-33,-70,1000mi"
+     # lati =params[:lati]+","
+     # longi=params[:longi]+","
+     # millas=params[:millas]
+     # coord = lati+longi+millas
+      #coord ="-33,-70,1000mi"
 
       #"-33,-70,100mi"
       
@@ -95,7 +66,29 @@ millas=0
       
      # @search = client.search(topics.join(","), :locale => "cl" , :geocode => "-33,-70,100mi").take(5).collect
       
-      @search = client.search(topics.join(","), :geocode => coord, :exclude_replies => true).take(5).collect
+      #@search = client.search(topics.join(","), :geocode => coord, :exclude_replies => false).take(5).collect
+
+
+
+          #<% if params[:q]  %>
+          # <form>
+          #    Ingresa una palabra clave para buscar:
+
+          #    <span style="color:purple">Tema: </span><input name="q"><br>
+          #    <span style="color:red">Latitud: (ej: -33) </span><input name="lati"> <br>
+          #    <span style="color:orange">Longitud: (ej: -70) </span><input name="longi"><br>
+          #    <span style="color:green">Millas a la redonda: (ej: 100mi)</span><input name="millas"> <br>
+
+          #    <input type="submit">
+          #    </form>
+          #
+          #               <p>Topico buscado:  <strong><%= params[:q]  %> </strong></p>
+          #              <% @search.each do |s|%>
+          #             <p> <%= s.text %></p>
+          #            <% end %>
+
+          #   <% end %>
+
 
 #--------------------------------------------
 

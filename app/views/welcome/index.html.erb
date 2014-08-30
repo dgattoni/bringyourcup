@@ -28,12 +28,7 @@
 <div class="container">
  <div class="container marketing">
 
-
  
-
-
-
-
 
 
       <!-- Three columns of text below the carousel -->
@@ -61,6 +56,14 @@
 
       <!-- START THE FEATURETTES -->
 
+ 
+
+
+ 
+       
+
+
+
 
 <div class="row">
           <div class="col-lg-12">
@@ -68,8 +71,11 @@
               <h1 id="type">Nuestras influencias musicales...</h1>
               
             </div>
+
           </div>
-        </div>
+
+ 
+   </div>
 
      
 
@@ -122,50 +128,21 @@
       </div>
 
       <hr class="featurette-divider">
- 
-       
-      <div class="row">
-
-
-       
-
-        <div class="col-md-7">
-          <form>
-          Ingresa una palabra clave para buscar:
-
-          <span style="color:purple">Tema: </span><input name="q"><br>
-          <span style="color:red">Latitud: (ej: -33) </span><input name="lati"> <br>
-          <span style="color:orange">Longitud: (ej: -70) </span><input name="longi"><br>
-          <span style="color:green">Millas a la redonda: (ej: 100mi)</span><input name="millas"> <br>
- 
-          <input type="submit">
-          </form>
-
   
 
-
-        
-    <% if (params.has_value?(:q))  %>
-
-        <p>Topico buscado:  <strong><%= params[:q]  %> </strong></p>
-            <% @search.each do |s|%>
-            <p> <%= s.text %></p>
-            <% end %>
-
-        <% end %>
-
-
-
-
-
-
-        
+       <div class="row">
+                <div class="col-lg-12">
+                  <ul>
+                  <% @search.each  do |f| %>
+                    <li>
+                    <%= f.text%>
+                    </li>
+                  <%  end %>
+                  </ul>  
+                %>
+                </div>
         </div>
 
-
-        </div>
-
-           
 
  
       <!-- /END THE FEATURETTES -->
