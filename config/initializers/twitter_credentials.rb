@@ -1,5 +1,4 @@
  
-require 'twitter'
 
 client = Twitter::REST::Client.new do |config|
       config.consumer_key        = "I9ikHMfYPqkGK8fkglKNACfNU"
