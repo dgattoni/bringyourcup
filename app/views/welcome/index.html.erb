@@ -7,6 +7,8 @@
 <div class="jumbotron">
 
 			<div class="container">
+
+      <div class="col-lg-8">
 				<p>
 
 
@@ -18,29 +20,29 @@
 				 Proyecto musical <span class="text-info">urbano</span> que surge de la necesidad de recopilar extractos de músicos que llevan su arte a las <span class="text-info">calles</span> y escenarios del <span class="text-info">mundo</span>. 
 				 <a class="btn btn-sm btn-default" role="button" href="#">Leer más »</a>
 				</h2>
+        </div>
 
-				  
 
-			</div><!-- //fin de container-->
+        <div class="col-lg-4">
 
-</div><!-- //fin de Jumbotron-->
-
-<div class="container">
-     <div class="row">
-            <div class="col-lg-10">
-
-            <h1>Últimos Tweets de Conciertos Comentados</h1>
+            <h4>Últimos Tweets de Conciertos Comentados</h4>
           <% @search.each  do |f| %>
-          <div class="alert alert-info" role="alert">
+          <div class="alert" role="alert">
           <%= image_tag("music16.png", class:"img-responsive pull-left") %> 
           <%= f.text%>
           </div>
           <%  end %>
              
             </div>
-       </div>
-   </div>
 
+ 
+				  
+
+			</div><!-- //fin de container-->
+
+</div><!-- //fin de Jumbotron-->
+
+ 
 
 
 <div class="container">
