@@ -23,11 +23,11 @@
         </div>
 
 
-        <div class="col-lg-4 ">
+        <div class="col-lg-4 bg-tweets">
 
-              <h4>Últimos Tweets de Conciertos Comentados</h4>
+              <h4 class="text-info">Últimos Tweets de Conciertos Comentados</h4>
               <% @search.each  do |f| %>
-              <div class="alert" role="alert">
+              <div class="alert text-warning" role="alert">
               <%= image_tag("music16.png", class:"img-responsive pull-left") %> 
               <%= f.text%>
               </div>
