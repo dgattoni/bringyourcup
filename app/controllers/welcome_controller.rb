@@ -37,7 +37,7 @@ class WelcomeController < ApplicationController
        options = { :until=>'2014-08-24', :count => 10, :include_rts => 0, :exclude_replies => 1, :retweeted => 0, :result_type=> 'recent', :geo => 1 }
        @search = $client.user_timeline(username, options)
       
-       $mifoto = $client.user('danigattoni_').profile_image_url("bigger")
+       $mifoto = $client.user('danigattoni_').profile_image_url("normal")
 
     #---EJEMPLO OK 5: -------------------------------------------------------------------------------
 
