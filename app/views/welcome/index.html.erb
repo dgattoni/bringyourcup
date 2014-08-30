@@ -25,10 +25,10 @@
 
         <div class="col-lg-4 bg-tweets">
 
-              <h4 class="text-info">Últimos Tweets de Conciertos Comentados</h4>
+              <h4 class="text-info"> <%= image_tag("twitter-icono-madera.png", class:"img-responsive pull-right") %></h4>
               <% @search.each  do |f| %>
-              <div class="alert text-warning" role="alert">
-              <%= image_tag("music16.png", class:"img-responsive pull-left") %> 
+              <div class="alert text-gris" role="alert">
+              <%= image_tag("music16.png", class:"img-responsive pull-left") %>
               <%= f.text%>
               </div>
               <%  end %>
