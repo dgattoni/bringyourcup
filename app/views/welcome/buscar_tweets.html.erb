@@ -26,16 +26,16 @@
         <div class="col-lg-4 bg-tweets">
  
              
-        		<% if request.get? %>
+        		 
 
 					<p>Topico buscado:  <strong><%= params[:q]  %> </strong></p>
 					<% @search.each do |s|%>
 					<p> <%= s.text %></p>
 					<% end %>
 
-          		<% else %>
+          		 
 
-						<form>
+					 <form method="get">
 					<span style="color:purple">Palabra: </span><input name="q"><br>
 					<span style="color:purple">Latitud: (ej: -33) </span><input name="lati"> <br>
 					<span style="color:purple">Longitud: (ej: -70) </span><input name="longi"><br>
@@ -44,7 +44,7 @@
 					</form>
 
 				
-            	<% end %>
+            	 
  
 
               <h4 class="text-info"> 
