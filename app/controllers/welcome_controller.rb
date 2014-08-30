@@ -73,9 +73,7 @@ class WelcomeController < ApplicationController
 
     $mifoto = $client.user('danigattoni_').profile_image_url("normal")
        
-     topics = [params[:q]]
-
-
+     topics = params[:q]
      lati =params[:lati]+","
      longi=params[:longi]+","
      millas=params[:millas]
@@ -86,7 +84,7 @@ class WelcomeController < ApplicationController
       
     #@search = client.search(topics.join(","), :lang => "es", :geocode => "-33.4691199, -70.641997, 50km").take(5).collect
     #@search = client.search(topics.join(","), :locale => "cl" , :geocode => "-33,-70,100mi").take(5).collect
-    @search = $client.search(topics.join(","), :geocode => coord, :exclude_replies => 0, :result_type=>"recent").take(5).collect
+    @search = $client.search(topics, :geocode => coord, :exclude_replies => 0, :result_type=>"recent").take(5).collect
 
 
     end
