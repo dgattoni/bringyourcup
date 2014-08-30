@@ -23,17 +23,7 @@
 
           <!-- SI EL USUARIO ESTA LOGUEADO ENTONCES QUE MUESTRE SALIR. DE LO CONTRARIO-->
 
-        <%          
-        #if user_signed_in? %>  
-        #  <li > <a href="<%= pins_path %>" class="text-info">Hola, <%= current_user.email %> <%= current_user.id %> </a></li>
-         #  <li><a href="<%= destroy_user_session_path %>" data-method="delete">Salir</a></li>
-           
-
-        #<% else %><!-- DE LO CONTRARIO QUE SOLO MUESTRE SOLAMENTE 2 LINKS INGRESA Y REGISTRAR-->
-        #<li><a href="<%= new_user_session_path %>">Ingresar</a></li>
-        #<li><a href="<%= new_user_registration_path %>">Registrarse</a></li>
-        #<% end %>
-       %>
+       
 
 
       </ul>
