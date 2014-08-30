@@ -34,7 +34,7 @@ class WelcomeController < ApplicationController
 
   #---EJEMPLO OK 5: -------------------------------------------------------------------------------
        username = 'danigattoni_'
-       options = {:count => 6, :include_rts => false, :exclude_replies => true}
+       options = {:count => 6, :include_rts => 1, :exclude_replies => 1, :retweeted => 1}
        @search = $client.user_timeline(username, options)
     #---EJEMPLO OK 5: -------------------------------------------------------------------------------
 
