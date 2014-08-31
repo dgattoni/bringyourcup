@@ -53,8 +53,8 @@ class WelcomeController < ApplicationController
 
   
 
-    topics = ["rock"]
-    @search = $client.search(topics.join(","),:lang=>"es",:count=>5).take(5).collect
+    topics = ["brmc"]
+    @search = $client.search(topics.join(","),:include_rts => 0,:exclude_replies => 1,:lang=>"es",:count=>5).take(5).collect
     #client.search("to:justinbieber marry me", :result_type => "recent").take(3).each do |tweet|
     #end def index
 
