@@ -29,9 +29,16 @@
 
                 <ul class="list-unstyled  text-gris small">
                
-                  <form>
-                  <input name="q"> 
-                  <input type="submit">
+                  <form   class="form-inline">
+
+                  <div class="field">
+                  <input name="q" class="form-control"> 
+                  </div>
+
+                  <div class="field">
+                  <input type="submit" value="buscar!" class="btn btn-danger">
+                  </div>
+
                   </form>
 
                    <% if request.GET.include? "q" %>
@@ -42,6 +49,10 @@
                       <span class="text-gris-oscuro">  <%= time_ago_in_words(tweet.created_at) %></span>
                       </li> 
                       <%  end %>
+                    
+                    <% else %>
+
+                    <li>Ingresa una palabra para buscar.</li>
 
                   <% end %>
 
