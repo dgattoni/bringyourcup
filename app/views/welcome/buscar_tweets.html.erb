@@ -62,7 +62,7 @@
                         
 
                       </span>&nbsp; <span class="text-warning"><%= tweet.user.screen_name %></span> 
-                       dice: <%= tweet.text.gsub($tema,<span class="text-warning">$tema.upcase</span>) %> 
+                       dice: <%= tweet.text.gsub($tema,'<span class="text-warning">'+$tema+'</span>') %> 
                         
                       <span class="text-gris-oscuro">  <%= time_ago_in_words(tweet.created_at) %></span>
                       
