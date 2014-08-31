@@ -92,7 +92,7 @@ class WelcomeController < ApplicationController
 
 
        if request.GET.include? "q"
-        $tema = params[:q]
+      
         topics =[params[:q]]
 
         #si viene parametro igual a vacio
