@@ -47,7 +47,7 @@ class WelcomeController < ApplicationController
 #---EJEMPO OK 6: --------------------------------------------------------------------------
      
       
-      # $mifoto = $client.user('danigattoni_').profile_image_url("normal")
+        $mifoto = $client.user('danigattoni_').profile_image_url("normal")
 
 #----------------------------------------------------------------------------------------------
 
