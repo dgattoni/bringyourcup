@@ -88,8 +88,10 @@ class WelcomeController < ApplicationController
       #@busca = $client.search(topics.join(","), :count=>5, :lang => "en", :exclude_replies => 0, :result_type=>"popular")
 
      # @busca = $client.search(topics.join(","))
+     #      topics = ["brmc"]
 
-      topics = ["brmc"]
+
+      topics =[params[:q]]
       @search = $client.search(topics.join(","),:result_type => "recent", :include_rts => 0,:exclude_replies => 0,:lang=>"es",:count=>5).take(5).collect
   
     end
