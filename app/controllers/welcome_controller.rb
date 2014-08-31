@@ -96,11 +96,11 @@ class WelcomeController < ApplicationController
         topics =[params[:q]]
 
         #si viene parametro igual a vacio
-        if params[:idioma] ==""
-            idioma="en"
+        if params[:coordenadas] ==""
+            coordenadas=""
          end
 
-         @search = $client.search(topics.join(","),:result_type => "recent", :include_rts => 0,:exclude_replies => 0,:lang=>idioma,:count=>5).take(5).collect
+         @search = $client.search(topics.join(","),:result_type => "recent", :include_rts => 0,:exclude_replies => 0,:geocode=>coordenadas,:count=>5).take(5).collect
 
       
       end
