@@ -25,12 +25,10 @@
 
         <div class="col-lg-4 bg-tweets">
  
-               
- 
- 
+                
 
-				 <% @busca.each do |s|%>
-				<p> <%= s.text %></p>
+				  <% @busca.each  do |tweet| %>
+				    <p> <%= tweet.text %></p>
 				<% end %>
  
  
