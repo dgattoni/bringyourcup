@@ -33,9 +33,9 @@ class WelcomeController < ApplicationController
 
 
   #---EJEMPLO OK 5: -------------------------------------------------------------------------------
-       username = 'danigattoni_'
-       options = { :until=>'2014-08-24', :count => 10, :include_rts => 0, :exclude_replies => 1, :retweeted => 0, :result_type=> 'recent', :geo => 1 }
-       @search = $client.user_timeline(username, options)
+      # username = 'danigattoni_'
+      # options = { :until=>'2014-08-24', :count => 10, :include_rts => 0, :exclude_replies => 1, :retweeted => 0, :result_type=> 'recent', :geo => 1 }
+      # @search = $client.user_timeline(username, options)
       
 
 
@@ -49,14 +49,17 @@ class WelcomeController < ApplicationController
       
         $mifoto = $client.user('danigattoni_').profile_image_url("normal")
 
-#----------------------------------------------------------------------------------------------
+#--------EJEMPLO 7--------------------------------------------------------------------------------------
 
   
 
-    # topics = ["rock"]
-    #client.search("#ruby -rt", :lang => "ja").first.text 
+    topics = ["rock"]
+   @search = $client.search(topics, :lang => "es", :count=>5)
     #client.search("to:justinbieber marry me", :result_type => "recent").take(3).each do |tweet|
     #end def index
+
+
+
     end 
 
 
@@ -70,9 +73,9 @@ class WelcomeController < ApplicationController
     # end
 
     def buscar_tweets
-      @pins = Pin.all
+      
       #$mifoto = $client.user('danigattoni_').profile_image_url("normal")
-      topics =  "emprendimiento"
+      #topics =  "emprendimiento"
 
       #lati =params[:lati]
       #longi=params[:longi]
@@ -86,7 +89,7 @@ class WelcomeController < ApplicationController
 
       #@busca = $client.search(topics.join(","), :count=>5, :lang => "en", :exclude_replies => 0, :result_type=>"popular")
 
-      @busca = $client.search(topics.join(","))
+     # @busca = $client.search(topics.join(","))
 
 
     end
