@@ -53,9 +53,7 @@ class WelcomeController < ApplicationController
 
   
 
-    topics = ["brmc"]
-    @search = $client.search(topics.join(","),:include_rts => 0,:exclude_replies => 1,:lang=>"es",:count=>5).take(5).collect
-    #client.search("to:justinbieber marry me", :result_type => "recent").take(3).each do |tweet|
+     #client.search("to:justinbieber marry me", :result_type => "recent").take(3).each do |tweet|
     #end def index
 
 
@@ -91,7 +89,9 @@ class WelcomeController < ApplicationController
 
      # @busca = $client.search(topics.join(","))
 
-
+      topics = ["brmc"]
+      @search = $client.search(topics.join(","),:result_type => "recent", :include_rts => 0,:exclude_replies => 0,:lang=>"es",:count=>5).take(5).collect
+  
     end
 
 
