@@ -91,7 +91,8 @@ class WelcomeController < ApplicationController
      #      topics = ["brmc"]
 
 
-       if params[:q]
+       if request.GET.include? "q"
+        
         topics =[params[:q]]
       else
         topics =["twitter"]
