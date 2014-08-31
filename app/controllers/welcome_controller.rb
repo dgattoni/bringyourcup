@@ -93,12 +93,13 @@ class WelcomeController < ApplicationController
 
        if params[:q]
         topics =[params[:q]]
+       @search = $client.search(topics.join(","),:result_type => "recent", :include_rts => 0,:exclude_replies => 0,:lang=>"es",:count=>5).take(5).collect
+
 
       else
         topics =["emprendimiento"]
       end
 
-              @search = $client.search(topics.join(","),:result_type => "recent", :include_rts => 0,:exclude_replies => 0,:lang=>"es",:count=>5).take(5).collect
 
       
 
