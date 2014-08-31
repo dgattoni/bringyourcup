@@ -29,22 +29,19 @@
 
                 <ul class="list-unstyled  text-gris small">
                
-                 <form>
-                <input name="q"> 
-                <input type="submit">
-                </form>
+                  <%= form_tag(buscar_tweets_path, :method => "get") do %>
+                  <%= label_tag(:q, "Search for:") %>
+                  <%= text_field_tag(:q) %>
+                  <%= submit_tag("Search") %>
+                  <% end %>
 
 
-              <% @search.each  do |tweet| %>
-
-              <li>
-              <span class="glyphicon glyphicon-music text-info"></span>&nbsp; <%= tweet.text%> 
-              <span class="text-gris-oscuro">  <%= time_ago_in_words(tweet.created_at) %></span>
-            
-
-              </li> 
-
-              <%  end %>
+                  <% @search.each  do |tweet| %>
+                  <li>
+                  <span class="glyphicon glyphicon-music text-info"></span>&nbsp; <%= tweet.text%> 
+                  <span class="text-gris-oscuro">  <%= time_ago_in_words(tweet.created_at) %></span>
+                  </li> 
+                  <%  end %>
 
               <a href="http://twitter.com/danigattoni_" title="Twitter"><%= image_tag("1409443310_twitter-bird2-webtreatsetc.png", class:"pull-right") %></a>
               </ul>
