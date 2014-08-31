@@ -94,7 +94,7 @@ class WelcomeController < ApplicationController
        if params[:q]
         topics =[params[:q]]
       else
-        topics = [""]
+        topics = ["concierto"]
       end
 
 
