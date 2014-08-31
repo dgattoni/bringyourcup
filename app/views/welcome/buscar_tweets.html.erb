@@ -27,36 +27,40 @@
  
                 
 
-                <ul class="list-unstyled  text-gris small">
                
-                  <form   class="form-inline">
 
-                  <div class="field">
-                  <input name="q" class="form-control"> 
-                  </div>
 
-                  <div class="field">
-                  <input type="submit" value="buscar!" class="btn btn-danger">
-                  </div>
-
+               <form class="form-inline" role="form">                   
+                        <div class="form-group">
+                        <label class="sr-only" for="txt_consulta">Tema</label>
+                        <input name="q" type="text" class="form-control" id="q" placeholder="Ingresa Tema">
+                        </div>  
+                        <div class="checkbox">
+                        <label>
+                          <input type="checkbox" name="check_espanol" value="es"> buscar tweets español
+                        </label>
+                        </div>
+                        <button type="submit" class="btn btn-default">ir</button>
                   </form>
+                 
+                 <ul class="list-unstyled  text-gris small">
 
-                   <% if request.GET.include? "q" %>
-                      
+                  <% if request.GET.include? "q" %>
+
                       <% @search.each  do |tweet| %>
                       <li>
                       <span class="glyphicon glyphicon-music text-info"></span>&nbsp; <%= tweet.text%> 
                       <span class="text-gris-oscuro">  <%= time_ago_in_words(tweet.created_at) %></span>
                       </li> 
                       <%  end %>
-                    
-                    <% else %>
 
-                    <li>Ingresa una palabra para buscar.</li>
+                      <% else %>
+
+                      <li><span class="glyphicon glyphicon-music text-info"></span> Ingresa una palabra para buscar.</li>
 
                   <% end %>
 
-              <a href="http://twitter.com/danigattoni_" title="Twitter"><%= image_tag("1409443310_twitter-bird2-webtreatsetc.png", class:"pull-right") %></a>
+                  <a href="http://twitter.com/danigattoni_" title="Twitter"><%= image_tag("1409443310_twitter-bird2-webtreatsetc.png", class:"pull-right") %></a>
               </ul>
 
 
