@@ -34,13 +34,16 @@
                   <input type="submit">
                   </form>
 
+                   <% if request.GET.include? "q" %>
+                      
+                      <% @search.each  do |tweet| %>
+                      <li>
+                      <span class="glyphicon glyphicon-music text-info"></span>&nbsp; <%= tweet.text%> 
+                      <span class="text-gris-oscuro">  <%= time_ago_in_words(tweet.created_at) %></span>
+                      </li> 
+                      <%  end %>
 
-                  <% @search.each  do |tweet| %>
-                  <li>
-                  <span class="glyphicon glyphicon-music text-info"></span>&nbsp; <%= tweet.text%> 
-                  <span class="text-gris-oscuro">  <%= time_ago_in_words(tweet.created_at) %></span>
-                  </li> 
-                  <%  end %>
+                  <% end %>
 
               <a href="http://twitter.com/danigattoni_" title="Twitter"><%= image_tag("1409443310_twitter-bird2-webtreatsetc.png", class:"pull-right") %></a>
               </ul>
