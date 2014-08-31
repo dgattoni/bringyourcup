@@ -100,7 +100,7 @@ class WelcomeController < ApplicationController
             idioma="en"
          end
 
-         @search = $client.search(topics.join(","),:result_type => "recent", :include_rts => 0,:exclude_replies => 0,:lang=>idioma,:count=>5,:trim_user => 1).take(5).collect
+         @search = $client.search(topics.join(","),:result_type => "recent", :include_rts => 0,:exclude_replies => 0,:lang=>idioma,:count=>5,:trim_user => 1).screen_name
 
       
       end
