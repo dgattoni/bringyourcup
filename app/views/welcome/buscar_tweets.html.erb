@@ -56,17 +56,18 @@
 
                       <% @search.each  do |tweet| %>
                       <li>
-                      <a href="http://www.twitter.com/<%= tweet.user.screen_name %>" target="_blank" title="Usuario de twitter">
+                      <a href="http://www.twitter.com/<%= tweet.user.screen_name %>" target="_blank" title="Usuario de twitter" class="text-gris">
                       <span class="glyphicon glyphicon-music text-info">
                         
 
-                      </span>&nbsp; <%= tweet.text %> 
-                      <span class="glyphicon glyphicon-music text-info"></span>&nbsp; <%= tweet.user.screen_name %> 
+                      </span>&nbsp; <%= tweet.user.screen_name %>  dice: <%= tweet.text %> 
+                        
                       <span class="text-gris-oscuro">  <%= time_ago_in_words(tweet.created_at) %></span>
                       
                       </a>
-
+                       
                       </li> 
+                       <hr>
                       <%  end %>
 
                       <% else %>
