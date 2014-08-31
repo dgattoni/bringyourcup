@@ -47,14 +47,14 @@ class WelcomeController < ApplicationController
 #---EJEMPO OK 6: --------------------------------------------------------------------------
      
       
-        $mifoto = $client.user('danigattoni_').profile_image_url("normal")
+       # $mifoto = $client.user('danigattoni_').profile_image_url("normal")
 
 #--------EJEMPLO 7--------------------------------------------------------------------------------------
 
   
 
     topics = ["rock"]
-   @search = $client.search(topics, :lang => "es", :count=>5)
+    @search = $client.search(topics.join(","),:count=>5)
     #client.search("to:justinbieber marry me", :result_type => "recent").take(3).each do |tweet|
     #end def index
 
