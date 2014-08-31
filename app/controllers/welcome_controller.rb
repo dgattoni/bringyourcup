@@ -47,7 +47,7 @@ class WelcomeController < ApplicationController
 #---EJEMPO OK 6: --------------------------------------------------------------------------
      
       
-       $mifoto = $client.user('danigattoni_').profile_image_url("normal")
+      # $mifoto = $client.user('danigattoni_').profile_image_url("normal")
 
 #----------------------------------------------------------------------------------------------
 
@@ -72,7 +72,7 @@ class WelcomeController < ApplicationController
     def buscar_tweets
 
     #$mifoto = $client.user('danigattoni_').profile_image_url("normal")
-    topics =  "jazz"
+    topics =  "jazz,rock"
      
      #lati =params[:lati]
      #longi=params[:longi]
@@ -84,7 +84,7 @@ class WelcomeController < ApplicationController
         #@search = client.search(topics.join(","), :locale => "cl" , :geocode => "-33,-70,100mi").take(5).collect
         #@search = $client.search(topic, :geocode => coord, :exclude_replies => 0, :result_type=>"recent").take(5).collect
    
-          @search = $client.search(topics.join(","),:lang => "en", :exclude_replies => 0, :result_type=>"popular").take(5).collect
+          @search = $client.search(topics.join(","), :count=>5, :lang => "en", :exclude_replies => 0, :result_type=>"popular")
          
 
     end
