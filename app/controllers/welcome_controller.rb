@@ -3,13 +3,13 @@ class WelcomeController < ApplicationController
 	 
  
     def index
-      @pins = Pin.all
+     # @pins = Pin.all
  
    
 
     #----------------------------------------------------------------------------------
         #EJEMPLO OK 1:
-             @search = client.search("#emprendimiento -rt", :lang => "es").take(3).collect
+             @search = $client.search("#emprendimiento -rt", :lang => "es").take(3).collect
         #-----------------------------------------------------------------------------
      
     #---EJEMPLO OK 2: -------------------------------------------------------------------------------
@@ -91,16 +91,16 @@ class WelcomeController < ApplicationController
      #      topics = ["brmc"]
 
 
-           #if request.GET.include? "q"
+           if request.GET.include? "q"
           
-            #topics =[params[:q]]
+            topics =[params[:q]]
 
-            #si viene parametro igual a vacio
-            #if params[:idioma] ==""
-            #    idioma="en"
-            # end
+            si viene parametro igual a vacio
+            if params[:idioma] ==""
+               idioma="en"
+            end
 
-            # @search = $client.search(topics.join(","), :locale=>idioma, :include_entities =>0, :result_type => "recent", :include_rts => 0,:exclude_replies => 0,:lang=>idioma,:count=>5).take(5).collect
+            @search  = $client.search(topics.join(","), :locale=>idioma, :include_entities =>0, :result_type => "recent", :include_rts => 0,:exclude_replies => 0,:lang=>idioma,:count=>5).take(5).collect
 
       
       end
