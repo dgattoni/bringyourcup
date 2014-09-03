@@ -9,7 +9,7 @@ class WelcomeController < ApplicationController
 
     #----------------------------------------------------------------------------------
         #EJEMPLO OK 1:
-            #@search = client.search("#DondeGuido -rt", :lang => "es").take(3).collect
+             @search = client.search("#emprendimiento -rt", :lang => "es").take(3).collect
         #-----------------------------------------------------------------------------
      
     #---EJEMPLO OK 2: -------------------------------------------------------------------------------
