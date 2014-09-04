@@ -11,7 +11,7 @@ class WelcomeController < ApplicationController
         #EJEMPLO OK 1:
              #@search = $client.search("#hack4good  -rt", :lang => "es").take(3).collect
 
-             @search = $client.search("#hack4good  -rt", :lang => "es").take(3).collect
+             @search = $client.search("#hack4good", :lang => "es").take(3).collect
         #-----------------------------------------------------------------------------
      
     #---EJEMPLO OK 2: -------------------------------------------------------------------------------
