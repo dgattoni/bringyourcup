@@ -12,6 +12,17 @@ class WelcomeController < ApplicationController
              #@search = $client.search("#hack4good  -rt", :lang => "es").take(3).collect
 
             # @search = $client.search("#hack4good -rt", :lang => "es").take(3).collect
+
+              # Recurso oficial: https://dev.twitter.com/docs/api/1.1/get/geo/search
+              # lat, long, ip, or query
+              # lat
+              # long
+              # query
+              # granularity 
+              # accuracy 
+
+
+            @search = $client.geo(:lat=>"-33",:long=>"-70",:query=>"hack4good",:granularity=>"country").take(5).collect
         #-----------------------------------------------------------------------------
      
     #---EJEMPLO OK 2: -------------------------------------------------------------------------------
@@ -30,14 +41,14 @@ class WelcomeController < ApplicationController
 
 
     #---EJEMPLO OK 4: -------------------------------------------------------------------------------
-      topics = ["hack4good -rt","hack4goodsantiago -rt"]
-      @search = $client.search(topics.join(","), :include_rts => false).take(3).collect
+     # topics = ["hack4good -rt","hack4goodsantiago -rt"]
+     # @search = $client.search(topics.join(","), :include_rts => false).take(3).collect
 
 
   #---EJEMPLO OK 5: -------------------------------------------------------------------------------
-      # username = 'danigattoni_'
-      # options = { :until=>'2014-08-24', :count => 10, :include_rts => 0, :exclude_replies => 1, :retweeted => 0, :result_type=> 'recent', :geo => 1 }
-      # @search = $client.user_timeline(username, options)
+    #username = 'danigattoni_'
+    #options = { :until=>'2014-08-24', :count => 10, :include_rts => 0, :exclude_replies => 1, :retweeted => 0, :result_type=> 'recent', :geo => 1 }
+    #@search = $client.user_timeline(username, options)
       
 
 
