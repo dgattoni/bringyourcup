@@ -15,9 +15,9 @@ class WelcomeController < ApplicationController
         #-----------------------------------------------------------------------------
      
     #---EJEMPLO OK 2: -------------------------------------------------------------------------------
-         username = 'danigattoni_'
-         options = {:count => 3, :include_rts => true}
-         @search = $client.user_timeline(username, options)
+        # username = 'danigattoni_'
+         #options = {:count => 3, :include_rts => true}
+         #@search = $client.user_timeline(username, options)
     #---EJEMPLO OK 2: -------------------------------------------------------------------------------
 
 
@@ -30,8 +30,8 @@ class WelcomeController < ApplicationController
 
 
     #---EJEMPLO OK 4: -------------------------------------------------------------------------------
-      #topics = ["#TodalaRed","#AlertaMetro"]
-     # @search = client.search(topics.join(","), :include_rts => false).take(3).collect
+      topics = ["#TodalaRed","#AlertaMetro"]
+      @search = $client.search(topics.join(","), :include_rts => false).take(3).collect
 
 
   #---EJEMPLO OK 5: -------------------------------------------------------------------------------
