@@ -23,7 +23,8 @@ class WelcomeController < ApplicationController
 
 
            #@search = $client.search("santiago",:count=>5,:geocode=>"-33.4691199,-70.641997,150km").take(3).collect
-            @search = $client.search("twitter", :lang => "es", :geocode=>"-33,-70,150km").take(3).collect
+            #@search = $client.search("cerveza", :lang => "es", :geocode=>"-33,-70,150km").take(3).collect
+            @search = $client.search("cerveza", :lang => "es", :geocode=>"-34,-58,150km").take(3).collect
 
         #-----------------------------------------------------------------------------
      
