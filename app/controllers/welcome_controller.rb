@@ -30,7 +30,7 @@ class WelcomeController < ApplicationController
 
 
     #---EJEMPLO OK 4: -------------------------------------------------------------------------------
-      topics = ["hack4good","hack4goodsantiago"]
+      topics = ["hack4good -rt","hack4goodsantiago -rt"]
       @search = $client.search(topics.join(","), :include_rts => false).take(3).collect
 
 
