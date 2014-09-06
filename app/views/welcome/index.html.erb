@@ -37,7 +37,7 @@
               <% @search.each  do |tweet| %>
 
               <li>
-              <span class="glyphicon glyphicon-music text-info"></span><%= tweet.name  %><%= tweet.location %> &nbsp; <%= tweet.text%> 
+              <span class="glyphicon glyphicon-music text-info"></span>  &nbsp; <%= tweet.text%> 
               <span class="text-gris-oscuro">  <%= time_ago_in_words(tweet.created_at) %></span>
            
 
