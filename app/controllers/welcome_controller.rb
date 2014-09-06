@@ -22,7 +22,9 @@ class WelcomeController < ApplicationController
               # accuracy 
 
 
-            @search = $client.search("santiago",:count=>5,:geocode=>"-33.4691199,-70.641997,150km").take(3).collect
+           #@search = $client.search("santiago",:count=>5,:geocode=>"-33.4691199,-70.641997,150km").take(3).collect
+            @search = $client.search("santiago", :lang => "es", :geocode=>"-33,-70,150km").take(3).collect
+
         #-----------------------------------------------------------------------------
      
     #---EJEMPLO OK 2: -------------------------------------------------------------------------------
