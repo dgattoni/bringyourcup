@@ -22,7 +22,7 @@ class WelcomeController < ApplicationController
               # accuracy 
 
 
-            @search = $client.search(:lat=>-33.4691199,:long=>-70.641997,:query=>"Twitter").take(5).collect
+            @search = $client.search("Twitter",:lat=>"-33.4691199",:long=>"-70.641997").take(3).collect
         #-----------------------------------------------------------------------------
      
     #---EJEMPLO OK 2: -------------------------------------------------------------------------------
