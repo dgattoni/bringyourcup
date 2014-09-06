@@ -11,13 +11,13 @@ class WelcomeController < ApplicationController
         #EJEMPLO OK 1:
              #@search = $client.search("#hack4good  -rt", :lang => "es").take(3).collect
 
-             @search = $client.search("#hack4good", :lang => "es").take(3).collect
+            # @search = $client.search("#hack4good -rt", :lang => "es").take(3).collect
         #-----------------------------------------------------------------------------
      
     #---EJEMPLO OK 2: -------------------------------------------------------------------------------
-        #username = 'danigattoni_'
-        #options = {:count => 3, :include_rts => true}
-        #@search = client.user_timeline(username, options)
+         username = 'danigattoni_'
+         options = {:count => 3, :include_rts => true}
+         @search = $client.user_timeline(username, options)
     #---EJEMPLO OK 2: -------------------------------------------------------------------------------
 
 
