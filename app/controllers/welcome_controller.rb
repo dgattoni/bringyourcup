@@ -22,7 +22,7 @@ class WelcomeController < ApplicationController
               # accuracy 
 
 
-            @search = $client.geo.search(:lat=>"-33",:long=>"-70",:query=>"hack4good",:granularity=>"country").take(5).collect
+            @search = $client.search(:geo=>1, :lat=>-33,:long=>-70,:query=>"hack4good",:granularity=>"country").take(5).collect
         #-----------------------------------------------------------------------------
      
     #---EJEMPLO OK 2: -------------------------------------------------------------------------------
