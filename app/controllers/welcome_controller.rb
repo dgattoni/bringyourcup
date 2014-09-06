@@ -26,7 +26,7 @@ class WelcomeController < ApplicationController
             #@search = $client.search("cerveza", :lang => "es", :geocode=>"-33,-70,150km").take(3).collect
            # @search = $client.search("#hack4good", :lang => "es", :geocode=>"-34.6037232,-58.38159310000003,150km", :until=>'2014-08-1').take(3).collect
             #@search = $client.search("#hack4good -rt", :lang => "es", :geocode=>"-31.3989296,-64.18212890000001,150km").take(3).collect
-            @search = $client.search("#hack4good", :lang => "es", :geocode=>"4.598056000000001,-74.07583299999999,150km", :until=>'2014-08-01').take(3).collect
+            @search = $client.search("#hack4good", :lang => "es", :geocode=>"4.598056000000001,-74.07583299999999,150km", :until=>'2014-07-20').take(3).collect
 
         #-----------------------------------------------------------------------------
      
