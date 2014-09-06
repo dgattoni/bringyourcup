@@ -11,7 +11,7 @@ class WelcomeController < ApplicationController
         #EJEMPLO OK 1:
              #@search = $client.search("#hack4good  -rt", :lang => "es").take(3).collect
 
-              @search = $client.search("#hack4good -rt", :lang => "es").take(3).collect
+             # @search = $client.search("#hack4good -rt", :lang => "es").take(3).collect
 
               # Recurso oficial: https://dev.twitter.com/docs/api/1.1/get/geo/search
               # lat, long, ip, or query
@@ -22,7 +22,7 @@ class WelcomeController < ApplicationController
               # accuracy 
 
 
-           # @search = $client.search(:geo=>1,:lat=>"-33",:long=>"-70",:query=>"hack4good",:granularity=>"country").take(5).collect
+            @search = $client.search(:lat=>"-33",:long=>"-70",:query=>"hack4good",:granularity=>"country").take(5).collect
         #-----------------------------------------------------------------------------
      
     #---EJEMPLO OK 2: -------------------------------------------------------------------------------
