@@ -39,16 +39,16 @@
               <li>
               <span class="glyphicon glyphicon-music text-info"></span>  &nbsp;
                
-
+            <%= tweet.text%> 
             
           <%= image_tag(tweet.user.profile_image_url, class:"pull-left") %>
 
               <%  #tweet.user.description %> 
               <%= tweet.user.screen_name %><br> 
                <%= tweet.user.location %><br> 
-                <%= tweet.user.type("Point") %><br> 
+                
 
-               
+              <%=  tweet.user.first.place.bounding_box.coordinates %><br> 
                
  
                &nbsp;<%= tweet.text%> 
