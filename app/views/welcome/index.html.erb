@@ -38,6 +38,9 @@
 
               <li>
               <span class="glyphicon glyphicon-music text-info"></span>  &nbsp;
+              
+
+     <%= tweet.user.profile_image_url_https %>
                <%= tweet.user.screen_name %> --->  <%= tweet.user.location %> ---> &nbsp;<%= tweet.text%> 
               <span class="text-gris-oscuro">  <%= time_ago_in_words(tweet.created_at) %>
                 <%= tweet.lat %>
