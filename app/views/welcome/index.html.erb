@@ -1,6 +1,44 @@
 
 
+  <div class="container" style="display:block; width:1024px; height:600px;">
+
+           
+
+          <% i=0 %>
+              <% @search.each  do |tweet| %>
  
+                <!-- comienza el elemento col -->
+                 <!--  <div class="col-sm-6 col-md-3 randomElement">-->
+                <% i += 1  %>
+                
+                <div id='latestblock<%= i %>' class="lBlock"> 
+
+                      <div class="thumbnail">
+                      <%= image_tag(tweet.user.profile_image_url("bigger"), class:"pull-left") %>
+                        <div class="caption">
+                         <h3><%= tweet.user.screen_name %></h3>
+                          <p><%= tweet.text%></p>
+                          <p><a href="<%= tweet.url %>" class="btn btn-info  btn-sm" role="button">ver tweet!</a>
+                          </p>
+                        </div>
+
+                      </div>
+
+                  </div>       
+
+              <%  end %>
+           
+
+
+              <a href="http://twitter.com/danigattoni_" title="Twitter"><%= image_tag("1409443310_twitter-bird2-webtreatsetc.png", class:"pull-right") %></a>
+               
+     
+ 
+          
+
+      </div><!-- //fin de container-->
+
+
 
 <!-- aqui solo cargamos cosas que iran dentro del body-->
 
@@ -173,21 +211,7 @@
 </div>
 
 
-<script>
-  
-
-//Randomize the position of all your elements, identified by a specific class
-//In case you have several items. Either, don't use the each()
  
-
-var rand = Math.floor(Math.random() * (max - min + 1) + min);
- 
-$(".randomElement").attr("position","absolute");
-
-$(".randomElement").attr("top",rand);
-$(".randomElement").attr("left",rand);
-
-</script>
 
 
 
