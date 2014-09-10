@@ -27,14 +27,14 @@
               <% @search.each  do |tweet| %>
  
 
-                <div class="row">
+                <div class="row randomElement">
                   <div class="col-sm-6 col-md-3">
                       <div class="thumbnail">
-                      <%= image_tag(tweet.user.profile_image_url, class:"center-block") %>
+                      <%= image_tag(tweet.user.profile_image_url, class:"pull-left") %>
                         <div class="caption">
                          <h3><%= tweet.user.screen_name %></h3>
                           <p><%= tweet.text%></p>
-                          <p><a href="<%= tweet.url %>" class="btn btn-primary" role="button">ver tweet!</a>
+                          <p><a href="<%= tweet.url %>" class="btn btn-info  btn-sm" role="button">ver tweet!</a>
                           </p>
                         </div>
                       </div>
@@ -178,3 +178,17 @@
     </div>
 
 </div>
+
+
+<script>
+  
+
+//Randomize the position of all your elements, identified by a specific class
+//In case you have several items. Either, don't use the each()
+$('.randomElement').each(function(){
+    $(this).css({'marginTop' : getRandomInt(-100,600), 'marginTop' : getRandomInt(-100,600)});
+});
+
+
+
+</script>
