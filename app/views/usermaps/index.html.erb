@@ -1,0 +1,33 @@
+<h1>Listing usermaps</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>Address</th>
+      <th>Description</th>
+      <th>Title</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @usermaps.each do |usermap| %>
+      <tr>
+        <td><%= usermap.latitude %></td>
+        <td><%= usermap.longitude %></td>
+        <td><%= usermap.address %></td>
+        <td><%= usermap.description %></td>
+        <td><%= usermap.title %></td>
+        <td><%= link_to 'Show', usermap %></td>
+        <td><%= link_to 'Edit', edit_usermap_path(usermap) %></td>
+        <td><%= link_to 'Destroy', usermap, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Usermap', new_usermap_path %>

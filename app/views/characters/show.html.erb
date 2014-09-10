@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @character.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @character.address %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @character.longitude %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @character.latitude %>
+</p>
+
+<p>
+  <strong>Gmaps:</strong>
+  <%= @character.gmaps %>
+</p>
+
+<%= link_to 'Edit', edit_character_path(@character) %> |
+<%= link_to 'Back', characters_path %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @usermap.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @usermap.longitude %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @usermap.address %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @usermap.description %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @usermap.title %>
+</p>
+
+<%= link_to 'Edit', edit_usermap_path(@usermap) %> |
+<%= link_to 'Back', usermaps_path %>

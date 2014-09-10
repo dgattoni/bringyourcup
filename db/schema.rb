@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140806041654) do
+ActiveRecord::Schema.define(version: 20140908040009) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -60,6 +60,16 @@ ActiveRecord::Schema.define(version: 20140806041654) do
     t.datetime "updated_at"
   end
 
+  create_table "characters", force: true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.float    "longitude"
+    t.float    "latitude"
+    t.boolean  "gmaps"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "pins", force: true do |t|
     t.string   "title"
     t.string   "photo"
@@ -68,6 +78,16 @@ ActiveRecord::Schema.define(version: 20140806041654) do
     t.text     "description"
     t.text     "destacado"
     t.integer  "user_id"
+  end
+
+  create_table "usermaps", force: true do |t|
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "address"
+    t.text     "description"
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
