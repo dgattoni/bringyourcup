@@ -1,15 +1,37 @@
-<%= simple_form_for(@usermap) do |f| %>
-  <%= f.error_notification %>
+<%= form_for(@usermap) do |f| %>
+  <% if @usermap.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@usermap.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-  <div class="form-inputs">
-    <%= f.input :latitude %>
-    <%= f.input :longitude %>
-    <%= f.input :address %>
-    <%= f.input :description %>
-    <%= f.input :title %>
+      <ul>
+      <% @usermap.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :latitude %><br>
+    <%= f.text_field :latitude %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="field">
+    <%= f.label :longitude %><br>
+    <%= f.text_field :longitude %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
   </div>
 <% end %>
