@@ -21,15 +21,15 @@
               </h4>
               
               
-             
+           <div class="row ">
+
 
               <% @search.each  do |tweet| %>
  
 
-                <div class="row randomElement">
-                  <div class="col-sm-6 col-md-3">
+                  <div class="col-sm-6 col-md-3 randomElement">
                       <div class="thumbnail">
-                      <%= image_tag(tweet.user.profile_image_url, class:"pull-left") %>
+                      <%= image_tag(tweet.user.profile_image_url("bigger"), class:"pull-left") %>
                         <div class="caption">
                          <h3><%= tweet.user.screen_name %></h3>
                           <p><%= tweet.text%></p>
@@ -38,10 +38,12 @@
                         </div>
                       </div>
                   </div>
-              </div>
+              
  
 
               <%  end %>
+</div><!--//row-->
+
 
               <a href="http://twitter.com/danigattoni_" title="Twitter"><%= image_tag("1409443310_twitter-bird2-webtreatsetc.png", class:"pull-right") %></a>
                
