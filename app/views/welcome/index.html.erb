@@ -185,10 +185,10 @@
 
 //Randomize the position of all your elements, identified by a specific class
 //In case you have several items. Either, don't use the each()
-$('.randomElement').each(function(){
-    $(this).css({'marginTop' : getRandomInt(-100,600), 'marginTop' : getRandomInt(-100,600)});
-});
+ 
 
-
+var rand = Math.floor(Math.random() * (max - min + 1) + min);
+$(".randomElement").attr("margin-top",rand);
+$(".randomElement").attr("margin-left",rand);
 
 </script>
