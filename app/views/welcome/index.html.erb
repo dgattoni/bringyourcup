@@ -26,8 +26,8 @@
 
               <% @search.each  do |tweet| %>
  
-
-                  <div class="col-sm-6 col-md-3">
+                <!-- comienza el elemento col -->
+                  <div class="col-sm-6 col-md-3 randomElement">
                       <div class="thumbnail">
                       <%= image_tag(tweet.user.profile_image_url("bigger"), class:"pull-left") %>
                         <div class="caption">
@@ -190,6 +190,7 @@
 
 var rand = Math.floor(Math.random() * (max - min + 1) + min);
  
+$(".randomElement").attr("position","absolute");
 
 $(".randomElement").attr("top",rand);
 $(".randomElement").attr("left",rand);
