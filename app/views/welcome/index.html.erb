@@ -8,22 +8,12 @@
 
 			<div class="container">
 
-      <div class="col-lg-8">
-				<p>
+       
 
 
-       <%= image_tag("titulo_conciertos_comentados.png", class:"img-responsive") %>
-
-				</p>
-				 
-				<h2>
-				 Proyecto musical <span class="text-info">urbano</span> que surge de la necesidad de recopilar extractos de músicos que llevan su arte a las <span class="text-info">calles</span> y escenarios del <span class="text-info">mundo</span>. 
-				 <a class="btn btn-sm btn-default" role="button" href="#">Leer más »</a>
-				</h2>
-        </div>
+        <div class="col-lg-12 bg-tweets">
 
 
-        <div class="col-lg-4 bg-tweets">
 
               <h4 class="text-info"> 
               <% # image_tag($mifoto, class:"pull-right") %>
@@ -35,30 +25,21 @@
              
 
               <% @search.each  do |tweet| %>
-
-              <li>
-              <span class="glyphicon glyphicon-music text-info"></span>  &nbsp;
-               
-            <%= tweet.text%> <br><br>
-             <%= tweet.url %> <br><br>
-            
-          <%= image_tag(tweet.user.profile_image_url, class:"pull-left") %>
-
-              <%  #tweet.user.description %> 
-              <%= tweet.user.screen_name %><br> <br>
-             <%= tweet.user.location %><br> <br>
-                
-
-              
-               
  
-               &nbsp;<%= tweet.text%> 
-              <span class="text-gris-oscuro">  <%= time_ago_in_words(tweet.created_at) %>
-                
-              </span>
-           
 
-              </li>
+                <div class="row">
+                  <div class="col-sm-6 col-md-3">
+                      <div class="thumbnail">
+                      <%= image_tag(tweet.user.profile_image_url, class:"center-block") %>
+                        <div class="caption">
+                         <h3><%= tweet.user.screen_name %></h3>
+                          <p><%= tweet.text%></p>
+                          <p><a href="<%= tweet.url %>" class="btn btn-primary" role="button">ver tweet!</a>
+                          </p>
+                        </div>
+                      </div>
+                  </div>
+              </div>
  
 
               <%  end %>
