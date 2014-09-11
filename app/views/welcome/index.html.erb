@@ -218,7 +218,7 @@
 <script type="text/javascript">
   
   function randomFromTo(from, to){
-      return Math.floor(Math.random() * (to - from + 1) + from);
+      return Math.floor(Math.random(600) * (to - from + 1) + from);
     }
   
     function moveRandom(id) {
@@ -250,7 +250,7 @@
       $(id).animate({
         top: newY,
         left: newX
-        }, 500, function() {
+        }, 900, function() {
       });
     }
 
@@ -260,6 +260,12 @@
   moveRandom('#latestblock4');
   moveRandom('#latestblock5');
   moveRandom('#latestblock6');
-
+  moveRandom('#latestblock6');
+  moveRandom('#latestblock7');
+  moveRandom('#latestblock8');
+  moveRandom('#latestblock9');
+  moveRandom('#latestblock10');
+  moveRandom('#latestblock11');
+  moveRandom('#latestblock12');
 
 </script>
