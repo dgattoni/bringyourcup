@@ -3,39 +3,38 @@
 
 <div class="jumbotron">
 
-			<div class="containerr" >
+ <div id="container">
+       
+           <div class="row">
 
-          
+                    <% i=0 %>
+                    <% @search.each  do |tweet| %>
+       
+                      <!-- comienza el elemento col -->
+                       <!--  <div class="col-sm-6 col-md-3 randomElement">-->
+                      <% i += 1  %>
+                      
+                      <div  class="item" style="width:25%"> 
+
+                            <div class="thumbnail">
+                            <%= image_tag(tweet.user.profile_image_url("bigger"), class:"pull-left") %>
+                              <div class="caption">
+                               <h3><%= tweet.user.screen_name %></h3>
+                                <p><%= tweet.text%></p>
+                                <p><a href="<%= tweet.url %>" class="btn btn-info  btn-sm" role="button">ver tweet!</a>
+                                </p>
+                              </div>
+
+                            </div>
+
+                        </div> <!-- //fin .item-->      
+
+                    <%  end %>
            
+              </div>
 
-          <% i=0 %>
-              <% @search.each  do |tweet| %>
- 
-                <!-- comienza el elemento col -->
-                 <!--  <div class="col-sm-6 col-md-3 randomElement">-->
-                <% i += 1  %>
-                
-                <div id='latestblock<%= i %>' class="lBlock"> 
-
-                      <div class="thumbnail">
-                      <%= image_tag(tweet.user.profile_image_url("bigger"), class:"pull-left") %>
-                        <div class="caption">
-                         <h3><%= tweet.user.screen_name %></h3>
-                          <p><%= tweet.text%></p>
-                          <p><a href="<%= tweet.url %>" class="btn btn-info  btn-sm" role="button">ver tweet!</a>
-                          </p>
-                        </div>
-
-                      </div>
-
-                  </div>       
-
-              <%  end %>
-           
-
-
-              <a href="http://twitter.com/danigattoni_" title="Twitter"><%= image_tag("1409443310_twitter-bird2-webtreatsetc.png", class:"pull-right") %></a>
-               
+            <a href="http://twitter.com/danigattoni_" title="Twitter"><%= image_tag("1409443310_twitter-bird2-webtreatsetc.png", class:"pull-right") %></a>
+             
      
  
 				  
@@ -176,55 +175,23 @@
 
 <script type="text/javascript">
   
-  function randomFromTo(from, to){
-      return Math.floor(Math.random(600) * (to - from + 1) + from);
-    }
-  
-    function moveRandom(id) {
-      /* get container position and size
-       * -- access method : cPos.top and cPos.left */
-      var cPos = $('.containerr').offset();
-      var cHeight = $('.containerr').height();
-      var cWidth = $('.containerr').width();
-      
-      // get box padding (assume all padding have same value)
-      var pad = parseInt($('.containerr').css('padding-top').replace('px', ''));
-      
-      // get movable box size
-      var bHeight = $(id).height();
-      var bWidth = $(id).width();
-      
-      // set maximum position
-      maxY = cPos.top + cHeight - bHeight - pad;
-      maxX = cPos.left + cWidth - bWidth - pad;
-      
-      // set minimum position
-      minY = cPos.top + pad;
-      minX = cPos.left + pad;
-      
-      // set new position     
-      newY = randomFromTo(minY, maxY);
-      newX = randomFromTo(minX, maxX);
-      
-      $(id).animate({
-        top: newY,
-        left: newX
-        }, 900, function() {
-      });
-    }
+var $container = $('#container');
+// initialize
+$container.masonry({
+columnWidth: 200,
+itemSelector: '.item'
+});
 
-  moveRandom('#latestblock1');
-  moveRandom('#latestblock2');
-  moveRandom('#latestblock3');
-  moveRandom('#latestblock4');
-  moveRandom('#latestblock5');
-  moveRandom('#latestblock6');
-  moveRandom('#latestblock6');
-  moveRandom('#latestblock7');
-  moveRandom('#latestblock8');
-  moveRandom('#latestblock9');
-  moveRandom('#latestblock10');
-  moveRandom('#latestblock11');
-  moveRandom('#latestblock12');
+
+$(window).load(function(){  
+var $container = $('#container');
+// initialize
+$container.masonry({
+columnWidth: 200,
+itemSelector: '.item'
+});
+
+});
+
 
 </script>
