@@ -14,12 +14,13 @@
                        <!--  <div class="col-sm-6 col-md-3 randomElement">-->
                       <% i += 1  %>
                       
-                      <div  class="item" style="width:150px; margin:0 auto;"> 
+                      <div  class="item" style="width:195px; margin:0 auto;"> 
 
                             <div class="thumbnail">
                             <%= image_tag(tweet.user.profile_image_url("bigger"), class:"center-block img-circle") %>
                               <div class="caption">
-                               <h3><%= tweet.user.screen_name %></h3>
+                               <h3><%= tweet.user.screen_name %><br>
+                               <%= tweet.user.location %></h3>
                                 <p><%= tweet.text%></p>
                                 <p><a href="<%= tweet.url %>" class="btn btn-success  btn-sm" role="button">ver tweet!</a>
                                 </p>
