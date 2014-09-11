@@ -1,7 +1,7 @@
  
   
 
-  <div class="container">
+  <div class="containerr">
 
         
           <% i=0 %>
@@ -224,12 +224,12 @@
     function moveRandom(id) {
       /* get container position and size
        * -- access method : cPos.top and cPos.left */
-      var cPos = $('.container').offset();
-      var cHeight = $('.container').height();
-      var cWidth = $('.container').width();
+      var cPos = $('.containerr').offset();
+      var cHeight = $('.containerr').height();
+      var cWidth = $('.containerr').width();
       
       // get box padding (assume all padding have same value)
-      var pad = parseInt($('.container').css('padding-top').replace('px', ''));
+      var pad = parseInt($('.containerr').css('padding-top').replace('px', ''));
       
       // get movable box size
       var bHeight = $(id).height();
