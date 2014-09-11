@@ -25,7 +25,7 @@
                                 <%= tweet.text%></a>
                                 </p>
 
-                                
+                                <p><%= tweet.user.display_url %></p>
                                 <p>
                                 <span class="small"> <%= time_ago_in_words(tweet.created_at) %></span>
                                  
