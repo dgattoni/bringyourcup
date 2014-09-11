@@ -3,7 +3,7 @@
 
 <div class="jumbotron">
 
- <div id="container" style="width:100%;">
+ <div id="container" style="width:1280px!important;">
        
            <div class="row">
 
@@ -14,7 +14,7 @@
                        <!--  <div class="col-sm-6 col-md-3 randomElement">-->
                       <% i += 1  %>
                       
-                      <div  class="item" style="width:193px; margin:0 auto;"> 
+                      <div  class="item" style="width:210px; margin:0 auto;"> 
 
                             <div class="thumbnail">
                             <%= image_tag(tweet.user.profile_image_url("bigger"), class:"center-block img-circle") %>
@@ -25,7 +25,7 @@
                                 <%= tweet.text%></a>
                                 </p>
 
-                                 
+
                                 <p>
                                 <span class="small"> <%= time_ago_in_words(tweet.created_at) %></span>
                                  
@@ -42,7 +42,7 @@
            
               </div>
 
-            <a href="http://twitter.com/danigattoni_" title="Twitter"><%= image_tag("1409443310_twitter-bird2-webtreatsetc.png", class:"pull-right") %></a>
+            
              
      
  
