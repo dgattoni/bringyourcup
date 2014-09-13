@@ -19,8 +19,8 @@
     <% @events.each do |event| %>
       <tr>
         <td><%= event.name %></td>
-        <td><%= link_to 'Show', org_event_path(event, @org) %> /</td>
-        <td> <%= link_to 'Edit', edit_org_event_path(event, @org) %></td>
+        <td><%= link_to 'Show', org_event_path(@org, event) %> /</td>
+        <td> <%= link_to 'Edit', edit_org_event_path(@org, event) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -41,8 +41,8 @@
       <tr>
         <td><%= person.event_id %></td>
         <td><%= person.name %></td>
-        <td><%= link_to 'Show', org_person_path(person, @org) %> /</td> 
-        <td> <%= link_to 'Edit', edit_org_person_path(person, @org) %></td>
+        <td><%= link_to 'Show', org_person_path(@org, event) %> /</td> 
+        <td> <%= link_to 'Edit', edit_org_person_path(@org, event) %></td>
       </tr>
     <% end %>
   </tbody>

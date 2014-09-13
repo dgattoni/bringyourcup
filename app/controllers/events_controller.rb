@@ -11,7 +11,8 @@ class EventsController < InheritedResources::Base
   end
 
   def show
-    @event = Event.find_by_id(params[:id])
+    @event = Event.find(params[:id])
+    @org = Org.find(params[:org_id])
   end
 
   def new

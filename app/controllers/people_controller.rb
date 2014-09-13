@@ -12,6 +12,7 @@ class PeopleController < InheritedResources::Base
 
   def show
     @person = Person.find_by_id(params[:id])
+    @org = Org.find(params[:org_id])
   end
 
   def new
