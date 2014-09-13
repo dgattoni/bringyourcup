@@ -16,4 +16,10 @@
 /tmp
 
 #ignoraar todos los archivos de extension env
+#para crear las credenciales seguras de twitter tienes que agregar 4 lineas en tu archivo .env tal como te muestro aqui:
+#TWITTER_API_KEY = "*****"
+#TWITTER_API_SECRET = "*****"
+#TWITTER_ACCESS_TOKEN = "*****"
+#TWITTER_ACCESS_TOKEN_SECRET = "*****"
+
 .env
