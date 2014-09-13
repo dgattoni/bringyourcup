@@ -1,7 +1,7 @@
 class EventsController < InheritedResources::Base
 
   def create 
-    @event = Event.new(person_params)
+    @event = Event.new(event_params)
     @event.org_id = params[:org_id]
     if @event.save 
       redirect_to org_path(@event.org)
