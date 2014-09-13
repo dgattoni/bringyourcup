@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :events
   end
 
+  resources :cups
   resources :usermaps
   resources :characters
   resources :categories

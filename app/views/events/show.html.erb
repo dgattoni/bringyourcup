@@ -1,9 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @event.name %>
-</p>
-
+<h1><%= @event.name %></h1>
 <%= link_to 'Edit', edit_org_event_path(@org, @event) %> |
 <%= link_to 'Back', org_events_path %>
+<br/><br/>
+
+<% @people.all.each do |p| %>
+  <%= p.name %>: 
+  <%= link_to "Add to Wall of Shame" %>,
+  <%= link_to "Add to Wall of Fame" %>
+  <% c = p.cups.last %>
+  <% if c.present? %>
+    <% if c.brought_cup == true %>
+      <%= link_to cup_path(c) do %>
+      <% end %>
+    <% else %>
+      <%= link_to cup_path(c) do %>
+        <%= image_tag 'bad1.jpg', size: "100x100" %>
+      <% end %>
+    <% end %>
+  <% end %>
+  <br/><br/>
+<% end %>
