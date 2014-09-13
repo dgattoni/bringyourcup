@@ -24,42 +24,18 @@
                                 <p><a href="<%= tweet.url %>" class="" >
                                 <%= tweet.text%></a>
                                 </p>
-
-
                                 <p>
                                 <span class="small text-right"> <%= time_ago_in_words(tweet.created_at) %></span>
-                                 
-                                
                                 </p>
-
                               </div>
-
                             </div>
-
                         </div> <!-- //fin .item-->      
-
                     <%  end %>
-           
               </div>
-
-            
-             
-     
- 
-				  
-
 			</div><!-- //fin de container-->
-
 </div><!-- //fin de Jumbotron-->
-
- 
-
-
 <div class="container">
  <div class="container marketing">
-
- 
-
 
       <!-- Three columns of text below the carousel -->
       <div class="row">
@@ -83,90 +59,45 @@
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
 
-
       <!-- START THE FEATURETTES -->
-
- 
-
-
- 
-       
-
-
-
-
-<div class="row">
-          <div class="col-lg-12">
-            <div class="page-header">
-              <h1 id="type">Nuestras influencias musicales...</h1>
-              
-            </div>
-
-          </div>
-
- 
-   </div>
-
-     
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">Banda Mala Hierba. <span class="text-muted">Me invitaron a un día de ensayo.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+<hr class="featurette-divider">
+<div class="container">
+ <div class="container marketing">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="page-header">
+        <h1 id="type">Tu grupo de amigos...
+          <br/>
+          todos trayendo sus tazones...
+          <br/>
+          ¡pueden cambiar el mundo!
+        </h1>
+        <br/>
+        <p>¿Cuántas personas hay en tu grupo? &nbsp; &nbsp; <input id="group-size" class="calculator-input"></p>
+        <p>¿Cuántos coffeebreaks se hacen en una semana? &nbsp; &nbsp; <input id="coffee-breaks" class="calculator-input"></p>
+        <br/>
+        <div id="calcular" class="btn">
+          ¡Calcular!
         </div>
-        <div class="col-md-5">
-          <img alt="500x500" data-src="holder.js/500x500/auto" class="featurette-image img-responsive" src="https://i.ytimg.com/vi/QTOFlgWVhQY/0.jpg">
-        </div>
+        <br/>
+        <h1>Si todo tu grupo #llevasutazón en lugar de vasos descartables:</h1>
+        Evitas <span id="vasos-mensual-persona">____</span> vasos desechables al mes por persona.
+        <br/>
+        Evitas <span id="vasos-anual-persona">____</span> vasos desechables al año por persona.
+        <br/>
+        ¡Evitas <span id="vasos-anual-grupo">____</span> vasos desechables por año en tu grupo!
+        <br/>
       </div>
 
-     <div class="row">
-          <div class="col-lg-12">
-            <div class="page-header">
-              <h1 id="type">Musicos en las Calles...</h1>
-              
-            </div>
-          </div>
-        </div>
+      <h1 id="type">Motiva a tu grupo de amigos aquí a reusar su tazón</h1>
+      <h2>Usa el muro de la <b>fama</b> o de la <b>vergüenza</b>.</h2>
 
-      <div class="row featurette">
-        <div class="col-md-5">
-          <img alt="500x500" data-src="holder.js/500x500/auto" class="featurette-image img-responsive" src="https://i.ytimg.com/vi/lMpZGAUGk8w/0.jpg">
-        </div>
-        <div class="col-md-7">
-          <h2 class="featurette-heading">Cueca chora en Lastarria. <span class="text-muted">Pongase a bailar hace bien.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-      </div>
-
-       <div class="row">
-          <div class="col-lg-12">
-            <div class="page-header">
-              <h1 id="type">Oda al...Saxofón</h1>
-              
-            </div>
-          </div>
-        </div>
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">Saxofón y el Jazz. <span class="text-muted">Instrumentos de viento y otras hierbas.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5">
-          <img alt="500x500" data-src="holder.js/500x500/auto" class="featurette-image img-responsive" src=" https://i.ytimg.com/vi/HIONSDlaOic/0.jpg">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-  
-
-      
-
-
- 
+    </div>
+   </div>   
+  </div>
+</div>
+<hr class="featurette-divider">
       <!-- /END THE FEATURETTES -->
-
-
       <!-- FOOTER -->
       <footer>
         <p class="pull-right"><a href="#">Subir</a></p>
@@ -176,12 +107,33 @@
     </div>
 
 </div>
+<script>
+  $(function() {
 
+    function roundTenths(float) {
+      return Math.floor(float)
+    }
 
- 
+    $("#calcular").click(function() {
+      var group_size = $("#group-size").val()
+      var weekly_breaks = $("#coffee-breaks").val()
+      var intRegex = /^\d+$/;
 
-
-
+      if (intRegex.test(weekly_breaks) && 
+        intRegex.test(group_size)) {
+          var weekly_breaks_int = parseInt(weekly_breaks);
+          var group_size_int = parseInt(group_size);
+          var vasos_menusal_persona = weekly_breaks_int * 4.35;
+          var vasos_anual_persona = weekly_breaks_int * 52.14;
+          var vasos_anual_grupo = vasos_anual_persona * group_size_int;
+          $("#vasos-mensual-persona").html(roundTenths(vasos_menusal_persona));
+          $("#vasos-anual-persona").html(roundTenths(vasos_anual_persona));
+          $("#vasos-anual-grupo").html(roundTenths(vasos_anual_grupo));
+          $("#group-size-below").html(group_size_int);
+        }
+    });
+  });
+</script>
 <script type="text/javascript">
   
 var $container = $('#container');
