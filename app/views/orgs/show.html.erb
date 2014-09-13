@@ -5,5 +5,32 @@
   <%= @org.name %>
 </p>
 
+<table>
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @people.each do |person| %>
+      <tr>
+        <td><%= person.event_id %></td>
+        <td><%= person.name %></td>
+        <td><%= link_to 'Show', org_person_path(person, @org) %> /</td> 
+        <td> <%= link_to 'Edit', edit_org_person_path(person, @org) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "Add Person", new_org_person_path(@org) %>
+<br/><br/>
+<%= link_to "Add Event", new_org_event_path(@org) %>
+<br/><br/>
+
+Events
+
 <%= link_to 'Edit', edit_org_path(@org) %> |
 <%= link_to 'Back', orgs_path %>

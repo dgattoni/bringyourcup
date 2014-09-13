@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Event:</strong>
-  <%= @person.event_id %>
+  <strong>Org:</strong>
+  <%= @person.org %>
 </p>
 
 <p>
@@ -11,4 +11,4 @@
 </p>
 
 <%= link_to 'Edit', edit_person_path(@person) %> |
-<%= link_to 'Back', people_path %>
+<%= link_to 'Back', org_people_path %>
