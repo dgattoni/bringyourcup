@@ -6,19 +6,33 @@
 <br/><br/>
 
 <% @people.all.each do |p| %>
-  <%= p.name %>: 
-  <%= link_to "Add to Wall of Shame" %>,
-  <%= link_to "Add to Wall of Fame" %>
-  <% c = p.cups.last %>
-  <% if c.present? %>
-    <% if c.brought_cup == true %>
-      <%= link_to cup_path(c) do %>
-      <% end %>
-    <% else %>
-      <%= link_to cup_path(c) do %>
-        <%= image_tag 'bad1.jpg', size: "100x100" %>
-      <% end %>
-    <% end %>
-  <% end %>
+  <%= p.name %><br/>
+  <div class="icon-area" data-name="<%= p.name %>"></div>
+  <span id="fame" class="wall" name="<%= p.name %>">Fame</span> /
+  <span id="shame" class="wall" name="<%= p.name %>">Shame</span>
   <br/><br/>
 <% end %>
+
+<script>
+$(function() {
+  var shame_image = "<img src='/assets/bad1.jpg' height='100' width='100'>";
+  var fame_image = "<img src='/assets/good1.jpg' height='100' width='100'>";
+  $(".wall").click(function() {
+    console.log("running...");
+    var status = $(this).attr("id");
+    var name = $(this).attr("name");
+    if (status === "fame") {
+      $(".icon-area[data-name='" + name + "']").html(fame_image);
+    } else if (status === "shame") {
+      $(".icon-area[data-name='" + name + "']").html(shame_image);
+    }
+  });
+});
+</script>
+<style>
+  .wall {
+    cursor: pointer;
+    text-decoration: underline;
+    color: blue;
+  }
+</style>
