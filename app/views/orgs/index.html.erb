@@ -1,25 +1,58 @@
+
+
+<div class="container">
+
+
+<div class="row">
+    <div class="col-lg-9">
+    <h1>Add your Organization/Company</h1>
+     
+    </div>
+    <div class="col-lg-2">
+
+    <%= link_to 'Add Your Org!', new_org_path, class:"btn btn-info  " %>
+
+     
+    </div>
+</div>
+
+
+
 <h1>Listing orgs</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
+
+<div class="row">
+   
     <% @orgs.each do |org| %>
-      <tr>
-        <td><%= org.name %></td>
-        <td><%= link_to 'Show', org %></td>
-        <td><%= link_to 'Edit', edit_org_path(org) %></td>
-        <td><%= link_to 'Destroy', org, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+
+    <div class="col-sm-3 col-md-3 pull-left">
+    <div class="thumbnail">
+      
+      <%= image_tag("icon_company.png") %>
+
+      <div class="caption">
+        <h4 style="text-transform:uppercase"><%= org.name %></h4>        
+         
+        <p>
+        <%= link_to 'Show', org, :class => 'btn btn-danger btn-sm' %>
+        <%= link_to 'Edit', edit_org_path(org), :class => 'btn btn-danger btn-sm' %>
+        <%= link_to 'Destroy', org, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger btn-sm' %>         
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+ 
     <% end %>
-  </tbody>
-</table>
+ 
+</div>
 
-<br>
 
-<%= link_to 'New Org', new_org_path %>
+ 
+ 
+
+
+
+</div>

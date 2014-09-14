@@ -15,12 +15,13 @@ Rails.application.routes.draw do
   devise_for :users
   resources :pins
 
-  get 'welcome/index'
+   get 'welcome/index'
    get 'welcome/nosotros'
    get 'welcome/descubre'
    get 'welcome/fullscreen'
    get 'welcome/buscar_tweets'
    get 'welcome/buscar_tweets'
+   get 'orgs/index'
 
 
   #get 'usermaps/index'
@@ -29,7 +30,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'usermaps#index'
-   root 'welcome#index'
+   root 'orgs#index'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -1,45 +1,77 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @org.name %>
-  <br/>
-  <%= link_to 'Edit', edit_org_path(@org) %> |
-  <%= link_to 'Back', orgs_path %>
+
+
+<div class="container">
+
+
+
+
+<div class="row">
+
+      <div class="col-lg-12">
+      <h1>Company name: <%= @org.name %></h1>
+       
+      </div>
+
+      <div class="col-lg-2">
+
+      <%= link_to 'Edit', edit_org_path(@org), class:"btn btn-small " %> |
+      <%= link_to 'Back', orgs_path, class:"btn  btn-small  " %>
+       
+      </div>
+
+  </div><!-- //ROW-->
+
+
+<div class="row">
+
+
+<div class="col-lg-12">
+    <h1>My Events: </h1>
+    <p><%= link_to "Add Event", new_org_event_path(@org),  class:"btn btn-success pull-right" %>
 </p>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Events</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <tbody>
+</div>
+
+
+<div class="row">
+    <div class="col-lg-12">
+
     <% @events.each do |event| %>
-      <tr>
-        <td><%= event.name %></td>
-        <td><%= link_to 'Show', org_event_path(@org, event) %> /</td>
-        <td> <%= link_to 'Edit', edit_org_event_path(@org, event) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+           
 
-<%= link_to "Add Event", new_org_event_path(@org) %>
-<br/><br/>
+            <div class="col-sm-3 col-md-3 pull-left ">
+           <h3> <%= event.name %> </h3>
+            <%= link_to 'Show', org_event_path(@org, event) %> / 
+              <%= link_to 'Edit', edit_org_event_path(@org, event) %> 
+           </div>
+     
+        <% end %>
+      
+    </div>
+</div><!-- ROW-->
+
+ 
+
+<div class="row">
+<div class="col-lg-12">
+    <h1>People: </h1>
+    <%= link_to "Add Person", new_org_person_path(@org),  class:"btn btn-success pull-right" %>
+
+ 
+</div>
+
+<div class="col-lg-12">
+
 
 <table>
-  <thead>
-    <tr>
-      <th>People</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+   
   <tbody>
     <% @people.each do |person| %>
       <tr>
-        <td><%= person.event_id %></td>
+        <td><strong><%= person.event_id %></strong></td>
         <td><%= person.name %></td>
         <td><%= link_to 'Show', org_person_path(@org, person) %> / </td> 
         <td><%= link_to 'Edit', edit_org_person_path(@org, person) %> / </td>
@@ -53,7 +85,18 @@
   </tbody>
 </table>
 
-<%= link_to "Add Person", new_org_person_path(@org) %>
-<br/><br/>
+
+</div>
 
 
+
+
+
+</div>
+
+
+
+</div><!-- container -->
+
+ 
+  
