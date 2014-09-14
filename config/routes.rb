@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
+
+  resources :orgs do
+    resources :people
+    resources :events
+  end
+
+  resources :cups
   resources :usermaps
-
   resources :characters
-
   resources :categories
 
   devise_for :admin_users, ActiveAdmin::Devise.config
