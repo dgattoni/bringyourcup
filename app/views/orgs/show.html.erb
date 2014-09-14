@@ -41,8 +41,13 @@
       <tr>
         <td><%= person.event_id %></td>
         <td><%= person.name %></td>
-        <td><%= link_to 'Show', org_person_path(@org, person) %> /</td> 
-        <td> <%= link_to 'Edit', edit_org_person_path(@org, person) %></td>
+        <td><%= link_to 'Show', org_person_path(@org, person) %> / </td> 
+        <td><%= link_to 'Edit', edit_org_person_path(@org, person) %> / </td>
+        <td><%= link_to 'Email Reminder', "mailto:#{person.email}?Subject=Bring%20Your%20Cup!&Body=Remember%20to%20bring%20your%20cup%20...", target: "_top" %> / </td>
+        <td><%= link_to 'Tweet Reminder', "https://twitter.com/intent/tweet?screen_name=#{person.twitter}&text=Remember%20to%20bring%20your%20cup!", class: "twitter-mention-button", target: "_top" %> </td>
+        <script type="text/javascript">
+        window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
+        </script>
       </tr>
     <% end %>
   </tbody>
